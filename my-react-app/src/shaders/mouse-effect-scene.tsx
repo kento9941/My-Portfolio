@@ -2,7 +2,7 @@
 
 import { useFrame, Canvas } from "@react-three/fiber";
 import { useFBO } from "@react-three/drei";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export default function MouseEffectScene() {
@@ -22,8 +22,20 @@ export default function MouseEffectScene() {
 };
 
 function Smoke() {
-    const ref = useRef<any>(null);
-    const prevMouse = useRef<[number, number]>([0, 0]);
+    const ref          = useRef<any>(null);
+    const prevMouse    = useRef<[number, number]>([0, 0]);
+    const currentMouse = useRef<[number, number]>([0, 0]);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            // R3Fの pointer.x / y と同じ形式 (-1 to +1) に変換
+            currentMouse.current[0] = (e.clientX / window.innerWidth) * 2 - 1;
+            currentMouse.current[1] = -(e.clientY / window.innerHeight) * 2 + 1;
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
 
     // [0] for velocity, [1] for density
     const targets = [
@@ -35,7 +47,7 @@ function Smoke() {
     useFrame((state) => {
         if (!ref.current) return;
 
-        const { gl, scene, camera, clock, size, pointer } = state;
+        const { gl, scene, camera, clock, size } = state;
 
         ref.current.uniforms.uTime.value = clock.elapsedTime;
 
@@ -47,7 +59,9 @@ function Smoke() {
           size.height * dpr
         );
 
-        ref.current.uniforms.uCurrentMouse.value.set(pointer.x, pointer.y);
+        const x = currentMouse.current[0];
+        const y = currentMouse.current[1];
+        ref.current.uniforms.uCurrentMouse.value.set(x, y);
         ref.current.uniforms.uPrevMouse.value.set(prevMouse.current[0], prevMouse.current[1]);
 
         // ping-pong
@@ -61,7 +75,7 @@ function Smoke() {
         gl.render(scene, camera);
         gl.setRenderTarget(null);
 
-        prevMouse.current = [pointer.x, pointer.y];
+        prevMouse.current = [x, y];
         frameCount.current++;
     });
 
