@@ -9,7 +9,11 @@ export default function MouseEffectScene() {
     return (
         <Canvas
             orthographic
-            style={{width: "100vw", height: "100vh"}}
+            dpr={[1, 2]} 
+            style={{
+                width: "100vw",
+                height: "100vh",
+            }}
             camera={{ zoom: 1 }}
         >
             <Smoke />
@@ -124,6 +128,7 @@ void main() {
 
     // マウスによる速度の発生
     vec2 mouseVel = mouseC - mouseP;
+    if (length(mouseVel) > 1.0) mouseVel = vec2(0.0);
     float dist = distToSegment(st, mouseP, mouseC);
     float strength = smoothstep(0.1, 0.0, dist);
     strength = pow(strength, 2.0);
