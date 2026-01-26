@@ -1,3 +1,6 @@
+"use client";
+
+import Contact from "../components/contact/contact";
 import Navigation from "../components/navigation/navigation";
 import MouseEffectScene from "../shaders/mouse-effect-scene";
 
@@ -22,7 +25,7 @@ export default function Home() {
             </div>
 
             {/* navigation */}
-            <div className="absolute top-[40vh] left-[4vw]">
+            <div className="absolute top-[15vh] left-[3vw]">
                 <Navigation />
             </div>
         </main>
