@@ -1,13 +1,8 @@
 "use client";
 
-import Navigation from "../components/navigation";
-
 export default function Home() {
     return (
         <main className="relative w-screen h-screen">
-            {/* logo */}
-            <img src="/logo.svg" alt="logo" className="absolute top-[6vh] left-[4vw] w-10 h-10 " />
-
             {/* title */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
                 <div className="flex flex-col justify-center items-center text-white font-thin select-none">
@@ -18,11 +13,6 @@ export default function Home() {
                         Developer & Designer
                     </h2>
                 </div>
-            </div>
-
-            {/* navigation */}
-            <div className="absolute top-[17vh] left-[3vw]">
-                <Navigation />
             </div>
 
             {/* monologue */}

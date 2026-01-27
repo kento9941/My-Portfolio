@@ -4,6 +4,7 @@ import Works from "./pages/Works";
 import Playground from "./pages/Playground";
 import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
+import Navigation from "./components/navigation";
 
 export default function App() {
   return (
@@ -16,6 +17,16 @@ export default function App() {
       <BrowserRouter>
         {/* custom cursor */}
         <Cursor />
+
+        <header>
+          {/* logo */}
+          <img src="/logo.svg" alt="logo" className="fixed top-[6vh] left-[4vw] w-10 h-10 z-50" />
+
+          {/* navigation */}
+          <div className="fixed top-[17vh] left-[3vw] z-50">
+            <Navigation />
+          </div>
+        </header>
 
         <div className="relative z-10">
           <Routes>
