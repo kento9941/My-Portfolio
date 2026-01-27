@@ -1,11 +1,24 @@
 import { NavLink } from "react-router-dom";
+import Contact from "./contact";
+
+export default function Navigation() {
+    return (
+        <div className="flex flex-col items-start gap-4 w-[20vw]">
+            <NavButton title="Home" link="/" />
+            <NavButton title="About" link="/About" />
+            <NavButton title="Works" link="/Works" />
+            <NavButton title="Playground" link="/Playground" />
+            <Contact />
+        </div>
+    )
+}
 
 type Props = {
     title: string;
     link: string;
 };
 
-export default function NavButton({title, link}: Props) {
+function NavButton({title, link}: Props) {
     return (
         <NavLink to={link}>
             {({isActive}) => (

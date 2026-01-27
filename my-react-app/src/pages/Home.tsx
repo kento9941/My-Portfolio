@@ -1,7 +1,6 @@
 "use client";
 
-import Contact from "../components/contact/contact";
-import Navigation from "../components/navigation/navigation";
+import Navigation from "../components/navigation";
 import MouseEffectScene from "../shaders/mouse-effect-scene";
 
 export default function Home() {
@@ -11,6 +10,9 @@ export default function Home() {
             <div className="absolute inset-0 z-0">
                 <MouseEffectScene />
             </div>
+
+            {/* logo */}
+            <img src="/logo.svg" alt="logo" className="absolute top-[6vh] left-[4vw] w-10 h-10 " />
 
             {/* title */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
@@ -25,8 +27,14 @@ export default function Home() {
             </div>
 
             {/* navigation */}
-            <div className="absolute top-[15vh] left-[3vw]">
+            <div className="absolute top-[17vh] left-[3vw]">
                 <Navigation />
+            </div>
+
+            {/* monologue */}
+            <div className="absolute bottom-[3vh] right-[2vw] w-[25vw] font-extralight text-[0.7rem] tracking-[0.1rem] pointer-events-none">
+                <p className="mb-2">Currently a student at Adelaide University, exploring the evolving landscape of web design.</p>
+                <p className="mb-2">Through constant trial and error and deep reflection, I am honing my ability to transform complex ideas into meaningful, sophisticated interfaces.</p>
             </div>
         </main>
     )
