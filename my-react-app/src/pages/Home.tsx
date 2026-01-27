@@ -1,16 +1,10 @@
 "use client";
 
 import Navigation from "../components/navigation";
-import MouseEffectScene from "../shaders/mouse-effect-scene";
 
 export default function Home() {
     return (
         <main className="relative w-screen h-screen">
-            {/* background */}
-            <div className="absolute inset-0 z-0">
-                <MouseEffectScene />
-            </div>
-
             {/* logo */}
             <img src="/logo.svg" alt="logo" className="absolute top-[6vh] left-[4vw] w-10 h-10 " />
 

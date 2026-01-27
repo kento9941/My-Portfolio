@@ -1,5 +1,7 @@
 export default function Works() {
     return (
-        <div>Works</div>
+        <main className="relative w-screen h-screen">
+            <div className="absolute inset-0">Works</div>
+        </main>
     )
 }

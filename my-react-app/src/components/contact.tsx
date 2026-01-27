@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useCursorStore } from "../store/useCursorStore";
 
 export default function Contact() {
     const [open, setOpen] = useState(false);
+    const set = useCursorStore((state) => state.setCursorType);
     return (
         <div>
             {/* accordion button */}
@@ -10,6 +12,8 @@ export default function Contact() {
                 className={`group w-[10vw] relative text-[1.2rem] tracking-widest font-light cursor-pointer mb-3
                 ${open ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
                 onClick={() => setOpen(!open)}
+                onMouseEnter={() => set("hover")}
+                onMouseLeave={() => set("default")}
             >
                 Contact
                 <span className={`absolute bottom-0 left-0 h-[1px] bg-white
@@ -46,8 +50,9 @@ type Props = {
 }
 
 function Icon({name, brand, url} : Props) {
+    const set = useCursorStore((state) => state.setCursorType);
     return (
-        <a href={url}  target="_blank" rel="noopener noreferrer">
+        <a href={url}  target="_blank" rel="noopener noreferrer" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
             <i className={`${brand} pe-[0.5rem]`} aria-hidden="true" />{name}
         </a>
     )
@@ -55,6 +60,7 @@ function Icon({name, brand, url} : Props) {
 
 function Email() {
     const [copied, setCopied] = useState(false);
+    const set = useCursorStore((state) => state.setCursorType);
 
     const copy = async () => {
         await navigator.clipboard.writeText("kento9941@gmail.com");
@@ -63,10 +69,10 @@ function Email() {
     };
 
     return (
-        <button onClick={copy} className="relative cursor-pointer">
+        <button onClick={copy} className="relative cursor-pointer" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
             <i className="fa-regular fa-envelope pe-[0.5rem]" />kento9941@gmail.com
             {copied && (
-                <span className="absolute top-[-1.5rem] right-0 text-[#ffffffaa]">
+                <span className="absolute top-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">
                     Copied!
                 </span>
             )}

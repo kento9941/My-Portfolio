@@ -10,10 +10,7 @@ export default function MouseEffectScene() {
         <Canvas
             orthographic
             dpr={[1, 2]} 
-            style={{
-                width: "100vw",
-                height: "100vh",
-            }}
+            style={{width: "100%", height: "100%"}}
             camera={{ zoom: 1 }}
         >
             <Smoke />
