@@ -8,9 +8,9 @@ import Navigation from "./components/navigation";
 
 export default function App() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen">
       {/* mouse effect background */}
-      <div className="fixed inset-0 -z-10 bg-black">
+      <div className="fixed inset-0 -z-10 bg-black w-screen h-screen">
         <MouseEffectScene />
       </div>
 
