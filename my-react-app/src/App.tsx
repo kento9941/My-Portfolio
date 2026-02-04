@@ -20,10 +20,10 @@ export default function App() {
 
         <header>
           {/* logo */}
-          <img src="/logo.svg" alt="logo" className="fixed top-[6vh] left-[4vw] w-10 h-10 z-50" />
+          <img src="/logo.svg" alt="logo" className="fixed top-[10vh] left-[3vw] w-12 h-12 z-50" />
 
           {/* navigation */}
-          <div className="fixed top-[17vh] left-[3vw] z-50">
+          <div className="fixed top-[25vh] left-[3vw] z-50">
             <Navigation />
           </div>
         </header>

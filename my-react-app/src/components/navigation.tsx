@@ -24,9 +24,8 @@ function NavButton({title, link}: Props) {
         <NavLink to={link}>
             {({isActive}) => (
             <div
-                className={`group w-[10vw] relative text-[1.2rem] tracking-widest font-light
+                className={`group w-[10vw] relative text-[1rem] tracking-widest font-light
                 ${isActive ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
-                onClick={() => set("default")}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}
             >
