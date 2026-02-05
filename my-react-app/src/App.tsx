@@ -19,16 +19,13 @@ export default function App() {
         <Cursor />
 
         <header>
-          {/* logo */}
-          <img src="/logo.svg" alt="logo" className="fixed top-[10vh] left-[3vw] w-12 h-12 z-50" />
-
           {/* navigation */}
-          <div className="fixed top-[25vh] left-[3vw] z-50">
+          <div className="fixed top-[10vh] left-[3vw] z-50">
             <Navigation />
           </div>
         </header>
 
-        <div className="relative z-10">
+        <div className="relative">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Works" element={<Works />} />
@@ -36,6 +33,10 @@ export default function App() {
           </Routes>
         </div>
       </BrowserRouter>
+
+      <footer className="fixed bottom-[0.8rem] left-[3vw] w-screen h-[1rem] text-[0.7rem] font-light">
+        <p>Ⓒ Kento Kawazoe</p>
+      </footer>
     </div>
   );
 }

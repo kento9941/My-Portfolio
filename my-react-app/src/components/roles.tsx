@@ -50,7 +50,7 @@ export default function Roles({ show, setShow }: Props) {
     }, [progress]);
 
     return (
-        <motion.div className="relative flex items-center justify-center w-[200px] h-[200px]" drag dragSnapToOrigin>
+        <motion.div className="relative flex items-center justify-center w-[200px] h-[200px]">
             <svg
                 width="150"
                 height="150"

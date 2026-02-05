@@ -5,9 +5,9 @@ import { useCursorStore } from "../store/useCursorStore";
 export default function Navigation() {
     return (
         <div className="flex flex-col items-start gap-4 w-[20vw]">
-            <NavButton title="Home" link="/" />
-            <NavButton title="Works" link="/Works" />
-            <NavButton title="Playground" link="/Playground" />
+            <NavButton title="HOME" link="/" />
+            <NavButton title="WORKS" link="/Works" />
+            <NavButton title="PLAYGROUND" link="/Playground" />
             <Contact />
         </div>
     )
@@ -24,7 +24,7 @@ function NavButton({title, link}: Props) {
         <NavLink to={link}>
             {({isActive}) => (
             <div
-                className={`group w-[10vw] relative text-[1rem] tracking-widest font-light
+                className={`group w-[10vw] relative text-[0.9rem] tracking-widest font-light
                 ${isActive ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}
