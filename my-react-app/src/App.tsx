@@ -4,11 +4,11 @@ import Works from "./pages/Works";
 import Playground from "./pages/Playground";
 import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
-import Navigation from "./components/navigation";
+import Navigation from "./components/navigation/navigation";
 
 export default function App() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen select-none">
       {/* mouse effect background */}
       <div className="fixed inset-0 -z-10 bg-black w-screen h-screen">
         <MouseEffectScene />

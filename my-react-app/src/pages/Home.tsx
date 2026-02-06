@@ -27,10 +27,10 @@ export default function Home() {
                 <div className="h-[50%] flex items-center justify-center">
                 {/* monologue 2 */}
                 {show && (
-                    <div className="ml-3 text-[0.7rem] tracking-[0.1rem] font-light pointer-events-none select-none">
+                    <div className="ml-3 text-[0.7rem] tracking-[0.1rem] font-light">
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: "easeOut" }}
                             >
@@ -39,7 +39,7 @@ export default function Home() {
                         </div>
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
                             >
@@ -48,16 +48,16 @@ export default function Home() {
                         </div>
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                             >
                                 aspiring developer,
                             </motion.p>
                         </div>
-                        <div className="mb-2 overflow-hidden">
+                        <div className="mb-4 overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                             >
@@ -66,7 +66,7 @@ export default function Home() {
                         </div>
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                             >
@@ -75,7 +75,7 @@ export default function Home() {
                         </div>
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
                             >
@@ -84,65 +84,20 @@ export default function Home() {
                         </div>
                         <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
                             >
                                 have hands-on experience
                             </motion.p>
                         </div>
-                        <div className="mb-3 overflow-hidden">
+                        <div className="overflow-hidden">
                             <motion.p
-                                initial={{ opacity: 0, y: 20}}
+                                initial={{ opacity: 0, y: 40}}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
                             >
                                 across the full-stack.
-                            </motion.p>
-                        </div>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20}}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                            >
-                                Currently, I am deep-
-                            </motion.p>
-                        </div>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20}}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
-                            >
-                                diving into WebGL,
-                            </motion.p>
-                        </div>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20}}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-                            >
-                                Three.js, and 3D modeling
-                            </motion.p>
-                        </div>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20}}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
-                            >
-                                to bring digital expression
-                            </motion.p>
-                        </div>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20}}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-                            >
-                                to the next level.
                             </motion.p>
                         </div>
                     </div>
