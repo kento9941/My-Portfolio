@@ -14,7 +14,7 @@ export default function Portfolio1() {
                     layoutId="portfolio1-container"
                     layout
                     transition={{ duration: 0.6 }}
-                    onMouseEnter={() => set("hover")}
+                    onMouseEnter={() => set("View")}
                     onMouseLeave={() => set("default")}
                     onClick={() => setSelected(true)}
                 >

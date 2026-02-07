@@ -1,8 +1,18 @@
 import { create } from "zustand";
 
+export type CursorType = 
+    | "default"
+    | "hover"
+    | "hold"
+    | "View"
+    | "Origami"
+    | "Basketball"
+    | "Tennis"
+    | "Gud Boi";
+
 interface CursorStore {
-    cursorType: "default" | "hover";
-    setCursorType: (type: "default" | "hover") => void;    
+    cursorType: CursorType;
+    setCursorType: (type: CursorType) => void;    
 }
 
 export const useCursorStore = create<CursorStore>((set) => ({

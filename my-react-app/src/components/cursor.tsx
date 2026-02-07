@@ -2,6 +2,52 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { useCursorStore } from "../store/useCursorStore";
+import type { CursorType } from "../store/useCursorStore";
+
+const cursorVariants: Record<CursorType | "hidden", any> = {
+    "default": {
+        scale: 1,
+        backgroundColor: "transparent"
+    },
+    "hover": {
+        scale: 0.5,
+        backgroundColor: "white"
+    },
+    "hold": {
+        scale: 2.5,
+        backgroundColor: "transparent",
+    },
+    "View": {
+        scale: 3,
+        backgroundColor: "white",
+        mixBlendMode: "difference",
+    },
+    "Origami": {
+        scale: 3,
+        backgroundColor: "white",
+        mixBlendMode: "soft-light",
+    },
+    "Basketball": {
+        scale: 3,
+        backgroundColor: "white",
+        mixBlendMode: "soft-light",
+    },
+    "Tennis": {
+        scale: 3,
+        backgroundColor: "white",
+    },
+    "Gud Boi": {
+        scale: 3,
+        backgroundColor: "white",
+        mixBlendMode: "soft-light",
+    },
+    "hidden": {
+        scale: 0,
+        opacity: 0,
+    }
+}
+
+const textCursorTypes: CursorType[] = ["View", "Origami", "Basketball", "Tennis", "Gud Boi"];
 
 export default function Cursor() {
     const cursorX = useMotionValue(-100);
@@ -29,18 +75,21 @@ export default function Cursor() {
             document.removeEventListener("mouseleave", handleMouseLeave);
             document.removeEventListener("mouseenter", handleMouseEnter);
         };
-    }, [cursorX, cursorY]);
+    }, [cursorX, cursorY, isVisible]);
 
     return (
         <motion.div
-            className="fixed w-[1.5rem] h-[1.5rem] rounded-full bg-transparent border-solid border-[1px] border-white pointer-events-none z-[100]"
+            className="fixed w-[1.5rem] h-[1.5rem] flex items-center justify-center rounded-full bg-transparent border-solid border-[1px] border-white pointer-events-none select-none z-[100]"
             style={{x: cursorX, y: cursorY, translateX: "-50%", translateY: "-50%"}}
-            animate={{
-                opacity: isVisible ? 1 : 0,
-                scale: isVisible ? (cursorType === "default" ? 1 : 0.5) : 0,
-                backgroundColor: cursorType === "default" ? "transparent" : "white",
-            }}
+            variants={cursorVariants}
+            animate={isVisible ? cursorType : "hidden"}
             transition={{ duration: 0.3 }}
-        />
+        >
+            {textCursorTypes.includes(cursorType) && (
+                <span className="text-[4px] font-medium text-black whitespace-nowrap">
+                    { cursorType }
+                </span>
+            )}
+        </motion.div>
     )
 }

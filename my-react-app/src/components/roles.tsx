@@ -52,8 +52,8 @@ export default function Roles({ show, setShow }: Props) {
     return (
         <motion.div className="relative flex items-center justify-center w-[200px] h-[200px]">
             <svg
-                width="150"
-                height="150"
+                width="200"
+                height="200"
                 viewBox="0 0 250 250"
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute mix-blend-difference z-[10]"
@@ -96,8 +96,8 @@ export default function Roles({ show, setShow }: Props) {
             </svg>
 
             <motion.svg
-                width="200"
-                height="200"
+                width="260"
+                height="260"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute"
@@ -108,7 +108,7 @@ export default function Roles({ show, setShow }: Props) {
                     cy="100"
                     r="65"
                     fill="none"
-                    stroke="white"
+                    stroke="#ffffffcc"
                     strokeWidth="30"
                     strokeDasharray={CIRCUM}
                     style={{
@@ -121,14 +121,14 @@ export default function Roles({ show, setShow }: Props) {
             </motion.svg>
 
             <motion.p
-                className="absolute w-[80px] text-center mix-blend-difference z-[10] select-none font-light"
+                className="absolute w-[80px] text-center mix-blend-difference z-[10] select-none font-thin"
                 animate={{ opacity: show ? 0 : 1 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
                 onPointerDown={() => (isHolding.current = true)}
                 onPointerUp={() => (isHolding.current = false)}
                 onPointerLeave={() => (isHolding.current = false)}
                 onMouseEnter={() => {
-                    if (!show) set("hover");
+                    if (!show) set("hold");
                 }}
                 onMouseLeave={() => {
                     if (!show) set("default");
