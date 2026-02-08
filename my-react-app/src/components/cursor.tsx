@@ -15,7 +15,8 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
     },
     "hold": {
         scale: 2.5,
-        backgroundColor: "transparent",
+        backgroundColor: "white",
+        opacity: 0.3,
     },
     "View": {
         scale: 3,
@@ -36,7 +37,7 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
         scale: 3,
         backgroundColor: "white",
     },
-    "Gud Boi": {
+    "My Dog": {
         scale: 3,
         backgroundColor: "white",
         mixBlendMode: "soft-light",
@@ -47,7 +48,7 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
     }
 }
 
-const textCursorTypes: CursorType[] = ["View", "Origami", "Basketball", "Tennis", "Gud Boi"];
+const textCursorTypes: CursorType[] = ["View", "Origami", "Basketball", "Tennis", "My Dog"];
 
 export default function Cursor() {
     const cursorX = useMotionValue(-100);

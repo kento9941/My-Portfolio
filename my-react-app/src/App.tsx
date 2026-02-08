@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
-import Playground from "./pages/Playground";
+import About from "./pages/About";
 import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
 import Navigation from "./components/navigation/navigation";
+import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   return (
@@ -20,17 +21,13 @@ export default function App() {
 
         <header>
           {/* navigation */}
-          <div className="fixed top-[10vh] left-[3vw] z-50">
+          <div className="fixed top-[12vh] left-[3vw] z-50">
             <Navigation />
           </div>
         </header>
 
         <div className="relative">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Works" element={<Works />} />
-            <Route path="/Playground" element={<Playground />} />
-          </Routes>
+          <AnimatedRoutes />
         </div>
       </BrowserRouter>
 
@@ -39,4 +36,17 @@ export default function App() {
       </footer>
     </div>
   );
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/Works" element={<Works />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
+    </AnimatePresence>
+  )
 }

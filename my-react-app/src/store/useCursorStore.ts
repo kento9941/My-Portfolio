@@ -8,7 +8,7 @@ export type CursorType =
     | "Origami"
     | "Basketball"
     | "Tennis"
-    | "Gud Boi";
+    | "My Dog";
 
 interface CursorStore {
     cursorType: CursorType;

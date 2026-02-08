@@ -1,13 +1,17 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import MenuScanner from "../components/works/menu-scanner";
 import StrudelMusicSequencer from "../components/works/strudel-music-sequencer";
 import Portfolio1 from "../components/works/portfolio-1";
 
 export default function Works() {
     return (
-        <main className="relative w-full min-h-screen flex flex-row justify-start items-start pt-[5vh] pl-[20vw]">
+        <motion.main
+            className="relative w-full min-h-screen flex flex-row justify-start items-start pt-[5vh] pl-[20vw]"
+            exit={{ opacity: 0, filter: "blur(5px)" }}
+            transition={{ duration: 0.8 }}
+        >
             <motion.div
                 className="w-[35vw] flex flex-col items-center justify-start pt-[25vh] pb-[12vh] gap-[25vh]"
                 initial={{ opacity: 0 }}
@@ -19,16 +23,16 @@ export default function Works() {
                 <Portfolio1 />
             </motion.div>
 
-            <div className="fixed text-[6rem] font-thin -z-1 overflow-hidden">
-                <motion.h2
+            <div className="fixed top-[5vh] left-[20vw] flex items-center justify-cetner text-[6rem] font-thin overflow-hidden whitespace-nowrap -z-1 ">
+                <motion.h1
                     initial={{ opacity: 0, y: "100%" }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                     WORKS & SKILLS
-                </motion.h2>
+                </motion.h1>
             </div>
-            <div className="fixed top-[40vh] right-[0vw] w-[30vw] text-[0.7rem] tracking-[0.1rem] font-light">
+            <div className="fixed top-[40vh] right-[0vw] w-full pl-[70vw] text-[0.7rem] tracking-[0.1rem] font-light -z-1">
                 <div className="overflow-hidden">
                     <motion.p
                         initial={{ opacity: 0, y: 40}}
@@ -89,7 +93,7 @@ export default function Works() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1.6, ease: "easeOut" }}
                     >
-                        building functional tools to crafting
+                        merely building functional tools to crafting
                     </motion.p>
                 </div>
                 <div className="overflow-hidden">
@@ -147,6 +151,6 @@ export default function Works() {
                     </motion.p>
                 </div>
             </div>
-        </main>
+        </motion.main>
     )
 }

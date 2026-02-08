@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useCursorStore } from "../../store/useCursorStore";
 
@@ -33,7 +33,7 @@ export default function Portfolio1() {
                         1st PORTFOLIO 
                     </h2>
                     <h3 className="text-[0.7rem] font-light">
-                        AUG 2025
+                        OCT 2025
                     </h3>
                 </div>
 
@@ -68,7 +68,7 @@ export default function Portfolio1() {
                         >
                             {/* back button */}
                             <div
-                                className="relative group w-[10vw] text-[1.2rem] tracking-widest font-light text-white my-10 -ml-6 "
+                                className="relative group w-[10vw] text-[1.2rem] tracking-widest font-light text-white my-8 -ml-6 "
                                 onMouseEnter={() => set("hover")}
                                 onMouseLeave={() => set("default")}
                                 onClick={() => setSelected(false)}
@@ -102,7 +102,7 @@ export default function Portfolio1() {
 
                                 <div className="w-full flex flex-row items-start justify-between border-b border-white/40 py-5">
                                     <h4 className="text-[0.8rem] font-medium">DURATION</h4>
-                                    <p className="text-[0.8rem] font-light">1 week (AUG 2025)</p>
+                                    <p className="text-[0.8rem] font-light">1 week (OCT 2025)</p>
                                 </div>
 
                                 <div className="w-full flex flex-row items-start justify-between py-5">

@@ -1,13 +1,9 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import { useCursorStore } from "../store/useCursorStore";
 
-type Props = {
-    show: boolean,
-    setShow: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export default function Roles({ show, setShow }: Props) {
+export default function Roles() {
+    const [hold, setHold] = useState(false);
     const progress = useMotionValue(0);
     const isHolding = useRef<boolean>(false);
     const CIRCUM = Math.PI * 160;
@@ -27,8 +23,8 @@ export default function Roles({ show, setShow }: Props) {
             const currentVal = progress.get();
 
             if (currentVal >= 1) {
-                setShow(true);
                 set("default");
+                setHold(true);
                 return;
             }
 
@@ -36,8 +32,8 @@ export default function Roles({ show, setShow }: Props) {
                 const nextVal = Math.min(currentVal + 0.01, 1);
                 progress.set(nextVal);
                 if (nextVal >= 1) {
-                    setShow(true);
                     set("default");
+                    setHold(true);
                 }
             } else {
                 progress.set(Math.max(currentVal - 0.02, 0));
@@ -50,10 +46,10 @@ export default function Roles({ show, setShow }: Props) {
     }, [progress]);
 
     return (
-        <motion.div className="relative flex items-center justify-center w-[200px] h-[200px]">
+        <motion.div className="relative flex items-center justify-center w-[300px] h-[300px]">
             <svg
-                width="200"
-                height="200"
+                width="300"
+                height="300"
                 viewBox="0 0 250 250"
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute mix-blend-difference z-[10]"
@@ -61,7 +57,7 @@ export default function Roles({ show, setShow }: Props) {
                 <motion.g
                     animate={{ rotate: 360 }}
                     transition={{ 
-                        duration: 15, 
+                        duration: 25, 
                         repeat: Infinity, 
                         ease: "linear" 
                     }}
@@ -96,8 +92,8 @@ export default function Roles({ show, setShow }: Props) {
             </svg>
 
             <motion.svg
-                width="260"
-                height="260"
+                width="385"
+                height="385"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute"
@@ -115,27 +111,49 @@ export default function Roles({ show, setShow }: Props) {
                         rotate: -90,
                         strokeDashoffset
                     }}
-                    animate={{ opacity: show ? 0 : 1 }}
+                    animate={{ opacity: hold ? 0 : 1 }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
                 />
             </motion.svg>
 
-            <motion.p
-                className="absolute w-[80px] text-center mix-blend-difference z-[10] select-none font-thin"
-                animate={{ opacity: show ? 0 : 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                onPointerDown={() => (isHolding.current = true)}
-                onPointerUp={() => (isHolding.current = false)}
-                onPointerLeave={() => (isHolding.current = false)}
-                onMouseEnter={() => {
-                    if (!show) set("hold");
-                }}
-                onMouseLeave={() => {
-                    if (!show) set("default");
-                }}
-            >
-                Hold
-            </motion.p>
+            <AnimatePresence mode="wait">
+            {hold ? 
+                <motion.div
+                    key="greeting"
+                    className="absolute w-auto flex flex-col items-center justofy-center text-[1rem] font-light tracking-wide"
+                    initial={{ opacity: 0, filter: "blur(5px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    transition={{ duration: 1 }}
+                >
+                    <p>Hello</p>
+                    <p>Thanks for stopping by</p>
+                    <p>Take your time</p>
+                    <p>Enjoy</p>
+                </motion.div>
+                :
+                <motion.p
+                    key="hold"
+                    className="absolute w-[100px] text-center mix-blend-difference z-[10] font-light"
+                    animate={{
+                        color: ["#aaaaaaaa", "#ffffffff", "#aaaaaaaa"],
+                    }}
+                    exit={{ opacity: 0, filter: "blur(5px)" }}
+                    transition={{
+                        color: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                    onPointerDown={() => (isHolding.current = true)}
+                    onPointerUp={() => (isHolding.current = false)}
+                    onPointerLeave={() => (isHolding.current = false)}
+                    onMouseEnter={() => { set("hold") }}
+                    onMouseLeave={() => { set("default") }}
+                >
+                    HOLD
+                </motion.p>
+            }
+            </AnimatePresence>
+
         </motion.div>
     );
 }

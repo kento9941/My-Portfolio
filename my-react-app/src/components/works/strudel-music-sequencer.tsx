@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useCursorStore } from "../../store/useCursorStore";
 
@@ -68,7 +68,7 @@ export default function StrudelMusicSequencer() {
                         >
                             {/* back button */}
                             <div
-                                className="relative group w-[10vw] text-[1.2rem] tracking-widest font-light text-white my-10 -ml-6 "
+                                className="relative group w-[10vw] text-[1.2rem] tracking-widest font-light text-white my-8 -ml-6 "
                                 onMouseEnter={() => set("hover")}
                                 onMouseLeave={() => set("default")}
                                 onClick={() => setSelected(false)}
@@ -116,6 +116,19 @@ export default function StrudelMusicSequencer() {
                                     </div>
                                     
                                 </div>
+                            </div>
+
+                            <div className="fixed group bottom-[30vh] right-[6vw] text-[1.2rem] tracking-widest font-light text-white">
+                                <a
+                                    href="https://github.com/kento9941/Strudel-Music-Sequencer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onMouseEnter={() => set("hover")}
+                                    onMouseLeave={() => set("default")}
+                                >
+                                    GitHub ↗
+                                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-hover:w-full" />
+                                </a>
                             </div>
                         </motion.div>
 

@@ -6,8 +6,8 @@ export default function Navigation() {
     return (
         <div className="flex flex-col items-start gap-4 w-[15vw]">
             <NavButton title="HOME" link="/" />
+            <NavButton title="ABOUT" link="/About" />
             <NavButton title="WORKS" link="/Works" />
-            <NavButton title="PLAYGROUND" link="/Playground" />
             <Contact />
         </div>
     )
