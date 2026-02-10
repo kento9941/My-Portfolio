@@ -6,7 +6,6 @@ export default function Navigation() {
     return (
         <div className="flex flex-col items-start gap-4 w-[15vw]">
             <NavButton title="HOME" link="/" />
-            <NavButton title="ABOUT" link="/About" />
             <NavButton title="WORKS" link="/Works" />
             <Contact />
         </div>
@@ -24,7 +23,7 @@ function NavButton({title, link}: Props) {
         <NavLink to={link}>
             {({isActive}) => (
             <div
-                className={`group w-[10vw] relative text-[0.9rem] tracking-widest font-light
+                className={`group w-[11vw] relative text-[0.9rem] tracking-widest font-light
                 ${isActive ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}

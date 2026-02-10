@@ -9,7 +9,7 @@ export default function Contact() {
         <div>
             {/* accordion button */}
             <div
-                className={`group w-[10vw] relative text-[1rem] tracking-widest font-light cursor-pointer mb-3
+                className={`group w-[11vw] relative text-[1rem] tracking-widest font-light cursor-pointer mb-3
                 ${open ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
                 onClick={() => setOpen(!open)}
                 onMouseEnter={() => set("hover")}
@@ -30,7 +30,7 @@ export default function Contact() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="overflow-hidden"
                     >
-                        <div className="flex flex-col items-start gap-2 text-[0.8rem] text-white font-extralight">
+                        <div className="flex flex-col items-start gap-2 text-[0.7rem] text-white font-extralight">
                             <Icon name="LinkedIn" brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
                             <Icon name="Instagram" brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
                             <Icon name="GitHub" brand="fa-brands fa-github" url="https://github.com/kento9941" />
