@@ -5,6 +5,7 @@ import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
 import Navigation from "./components/navigation/navigation";
 import { AnimatePresence } from "framer-motion";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
         <Route path="/Works" element={<Works />} />
       </Routes>
     </AnimatePresence>

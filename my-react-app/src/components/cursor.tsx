@@ -13,34 +13,40 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
         scale: 0.5,
         backgroundColor: "white"
     },
-    "hold": {
-        scale: 2.5,
-        backgroundColor: "white",
-        opacity: 0.3,
-    },
     "View": {
         scale: 3,
         backgroundColor: "white",
         mixBlendMode: "difference",
     },
-    "Origami": {
-        scale: 3,
-        backgroundColor: "white",
-        mixBlendMode: "soft-light",
+    "Mother and Child": {
+        scale: 4,
+        border: "none",
+        backgroundColor: "transparent",
+        opacity: 0.5,
     },
-    "Basketball": {
-        scale: 3,
-        backgroundColor: "white",
-        mixBlendMode: "soft-light",
+    "Girl and Dog": {
+        scale: 4,
+        border: "none",
+        backgroundColor: "transparent",
+        opacity: 0.5,
     },
-    "Tennis": {
-        scale: 3,
-        backgroundColor: "white",
+    "Snail": {
+        scale: 4,
+        border: "none",
+        backgroundColor: "transparent",
+        opacity: 0.5,
     },
-    "My Dog": {
-        scale: 3,
-        backgroundColor: "white",
-        mixBlendMode: "soft-light",
+    "Prayer": {
+        scale: 4,
+        border: "none",
+        backgroundColor: "transparent",
+        opacity: 0.5,
+    },
+    "Shape of Love": {
+        scale: 4,
+        border: "none",
+        backgroundColor: "transparent",
+        opacity: 0.5,
     },
     "hidden": {
         scale: 0,
@@ -48,7 +54,7 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
     }
 }
 
-const textCursorTypes: CursorType[] = ["View", "Origami", "Basketball", "Tennis", "My Dog"];
+const textCursorTypes: CursorType[] = ["View", "Mother and Child", "Girl and Dog", "Snail", "Prayer", "Shape of Love"];
 
 export default function Cursor() {
     const cursorX = useMotionValue(-100);
