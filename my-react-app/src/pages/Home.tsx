@@ -12,20 +12,24 @@ export default function Home() {
         >
             {/* about */}
             <motion.section
-                className="relative w-screen h-[90vh]"
+                className="relative w-screen min-h-screen"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="absolute top-[15vh] left-[15vw] flex flex-col items-start justify-start leading-none">
+                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[60vh] flex flex-col items-start justify-start leading-none">
                     <div className="text-[5rem] font-light">
                         <h1>KENTO</h1>
                         <h1>KAWAZOE</h1>
                     </div>
                     <div className="text-[1rem] font-thin pl-2">
+                        Web Developer / Designer
+                    </div>
+                    <div className="mt-auto pl-2 flex flex-col items-start justify-start text-[1rem] font-thin leading-tight">
+                        <p>For business inquiries, email me at</p>
                         <Email />
-                    </div>                    
+                    </div>
                 </div>
 
                 <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
@@ -233,8 +237,8 @@ function Email() {
     };
 
     return (
-        <button onClick={copy} className="relative cursor-pointer pt-[1rem] font-light" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
-            <i className="fa-regular fa-envelope pe-[0.5rem]" />kento9941@gmail.com
+        <button onClick={copy} className="relative cursor-pointer font-thin" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+            kento9941@gmail.com
             {copied && (
                 <span className="absolute bottom-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">
                     Copied!

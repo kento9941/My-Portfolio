@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
 import Cursor from "./components/cursor";
@@ -14,7 +13,7 @@ export default function App() {
       <motion.div
         className="fixed inset-0 bg-black flex items-center justify-center text-[2rem] font-light z-[9999]"
         initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
+        animate={{ opacity: 0, transitionEnd: { display: "none" } }}
         transition={{ duration: 0.8, ease: "easeInOut", delay: 2 }}
       >
         <motion.h1
