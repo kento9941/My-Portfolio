@@ -1,15 +1,20 @@
 import { NavLink } from "react-router-dom";
 import Contact from "./contact";
 import { useCursorStore } from "../../store/useCursorStore";
+import { motion } from "framer-motion";
 
 export default function Navigation() {
     return (
-        <div className="flex flex-col items-start gap-4 w-[10vw]">
+        <motion.div
+            className="flex flex-col items-start gap-4 w-[10vw]"
+            initial={{ opacity: 0, filter: "blur(5px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
             <NavButton title="HOME" link="/" />
-            <NavButton title="ABOUT" link="/About" />
             <NavButton title="WORKS" link="/Works" />
             <Contact />
-        </div>
+        </motion.div>
     )
 }
 

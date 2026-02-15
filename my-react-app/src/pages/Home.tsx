@@ -1,98 +1,245 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useCursorStore } from "../store/useCursorStore";
+import ParallaxImage from "../components/parallax-image";
 
 export default function Home() {
-
     return (
         <motion.main
             className="overflow-x-hidden"
             exit={{ opacity: 0, filter: "blur(5px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <section className="relative w-screen h-[120vh]">
-                {/* title */}
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(5px)" }}
-                    animate={{ opacity: 1, filter: "blur(0px)" }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                    <div className="absolute top-[60vh] left-[15vw] flex flex-col items-center justify-center w-[70vw] h-[25vh] leading-none">
-                        <div className="flex flex-row items-end justify-between w-full h-[15vh] p-2">
-                            <h1 className="text-[3rem] font-thin">PORTFOLIO</h1>
-                            <h1 className="text-[1rem] font-light">KENTO KAWAZOE</h1>
-                        </div>
-                        <div className="w-full h-[10vh] p-2 pl-4">
-                            <h2 className="font-[1rem] font-light">Web Design, Frontend, Backend</h2>
-                        </div>
+            {/* about */}
+            <motion.section
+                className="relative w-screen h-[90vh]"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <div className="absolute top-[15vh] left-[15vw] flex flex-col items-start justify-start leading-none">
+                    <div className="text-[5rem] font-light">
+                        <h1>KENTO</h1>
+                        <h1>KAWAZOE</h1>
                     </div>
-                </motion.div>
-
-                {/* texts */}
-                <div className="absolute left-[70vw] h-full flex flex-row text-[0.7rem] tracking-[0.1rem] font-light gap-5">
-                    <div className="relative pt-[20vh] flex flex-col overflow-hidden gap-1">
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
-                        >
-                            A Japanese student developer
-                        </motion.p>
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
-                        >
-                            and designer based in
-                        </motion.p>
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.2, ease: "easeOut" }}
-                        >
-                            Adelaide, Australia.
-                        </motion.p>
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.3, ease: "easeOut" }}
-                        >
-                            A full stack engineer focused
-                        </motion.p>
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.4, ease: "easeOut" }}
-                        >
-                            on frontend experiences and
-                        </motion.p>
-                        <motion.p
-                            initial={{ opacity: 0, y: "100%" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.5, ease: "easeOut" }}
-                        >
-                            creative innovation.
-                        </motion.p>
-                    </div>
+                    <div className="text-[1rem] font-thin pl-2">
+                        <Email />
+                    </div>                    
                 </div>
 
-                {/* lines */}
-                <motion.div
-                    className="absolute top-[75vh] left-[0vw] w-[100vw] h-[0.5px] bg-white"
-                    style={{ transformOrigin: "100% 50%" }}
-                    initial={{ x: "-100vw" }}
-                    animate={{ x: 0 }}
-                    transition={{ x: { duration: 0.8, ease: "easeOut" } }}
+                <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
+
+                <div className="absolute top-[15vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                        <h1>ABOUT ME</h1>
+                    </div>
+
+                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
+                        {[
+                            "I am currently in my final year of a Bachelor of Information",
+                            "Technology at Adelaide University.",
+                            "My main focus is web development, and I have worked on",
+                            "several full-stack personal projects.",
+                            "I enjoy exploring new technologies and experimenting with",
+                            "creative ideas.",
+                            "Outside of programming, I create origami art, play basketball,",
+                            "tennis, and chess.",
+                            null,
+                            "はじめまして、Kentoと申します。",
+                            "オーストラリアのアデレード大学でITを専攻しているWebエンジニアです。",
+                            "ジニアです。",
+                            "主にWebアプリケーション開発やWebサイト制作に力を入れており、新しい",
+                            "技術や表現にも積極的に挑戦しています。",
+                            "プログラミング以外では、折り紙、バスケ、テニス、チェスが好きです。",
+                        ].map((p, i) => (
+                            p === null ? (
+                                <div key={i} className="h-5"/>
+                            ) : (
+                                <p key={i}>{p}</p>
+                            )
+                        )
+                        )}
+                    </div>
+                </div>
+            </motion.section>
+
+            {/* motivation */}
+            <motion.section
+                className="relative w-screen h-[90vh]"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <ParallaxImage
+                    src="/me.jpeg"
+                    classname="absolute top-[20vh] left-[60vw] w-[35vw] h-[45vh] flex items-center justify-center overflow-hidden"
+                    hover="default"
                 />
-                <motion.div
-                    className="absolute top-[77vh] left-[60vw] w-[35vw] h-[4px] bg-[#f8f4e9]"
-                    style={{ transformOrigin: "0% 50%" }}
-                    initial={{ x: "100vw", scaleX: 1.5 }}
-                    animate={{ x: 0, scaleX: 1 }}
-                    transition={{
-                        x: { duration: 0.8, ease: "easeOut" },
-                        scaleX: { duration: 1.6, delay: 0.6, ease: "easeInOut" },
-                    }}
+
+                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
+
+                <div className="absolute top-[0vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                        <h1>MOTIVATION</h1>
+                    </div>
+
+                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
+                        {[
+                            "I'm a full-stack developer with a growing focus on frontend",
+                            "development.",
+                            "While I'm still exploring where I want my career to evolve,",
+                            "I've discovered that building user interfaces is what excites",
+                            "me the most.",
+                            "That's why I'm currently dedicating my energy to improving",
+                            "both my technical execution and design sensitivity on the",
+                            "frontend.",
+                            null,
+                            "主にフルスタック開発をしていますが、フロントエンドにより強い関心が",
+                            "あります。",
+                            "キャリアの方向性は模索中ですが、これまでの個人開発やチーム開発を通",
+                            "して、ユーザー体験に関わる領域に最も魅力を感じるようになりました。",
+                            "現在は、技術的な実装力とデザインへの理解の双方を高めることを目標に",
+                            "取り組んでいます。"
+                        ].map((p, i) => (
+                            p === null ? (
+                                <div key={i} className="h-5"/>
+                            ) : (
+                                <p key={i}>{p}</p>
+                            )
+                        )
+                        )}
+                    </div>
+                </div>
+            </motion.section>
+
+            {/* philosophy */}
+            <motion.section
+                className="relative w-screen h-[70vh]"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <ParallaxImage
+                    src="/architecture.png"
+                    classname="absolute top-[10vh] left-[20vw] w-[24vw] h-[28vh] flex items-center justify-center overflow-hidden"
+                    hover="default"
                 />
-            </section>
+
+                <div className="absolute top-[40vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
+                    <p className="italic -ml-[1rem]">"God is in the details"</p>
+                    <p className="pt-[0.5rem] pl-[1rem]">- Mies van der Rohe</p>
+                </div>
+
+                <div className="absolute top-[15vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
+
+                <div className="absolute top-[0vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                        <h1>PHILOSOPHY</h1>
+                    </div>
+
+                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
+                        {[
+                            "For me, strong products are built to be robust, reliable,",
+                            "and thoughtful.",
+                            "Aligned layouts, consistent typography, and carefully",
+                            "considered spacing.",
+                            "I focus on creating interfaces where clarity, balance, and",
+                            "usability come first.",
+                            null,
+                            "私にとって優れたプロダクトとは堅牢で信頼性があり、細部まで丁寧に",
+                            "設計されたものです。",
+                            "整ったレイアウトやタイポグラフィ、余白などを大切にし、使いやすさ",
+                            "を最優先にしたインターフェースを作ることを心がけています。",
+                        ].map((p, i) => (
+                            p === null ? (
+                                <div key={i} className="h-5"/>
+                            ) : (
+                                <p key={i}>{p}</p>
+                            )
+                        )
+                        )}
+                    </div>
+                </div>
+            </motion.section>
+
+            {/* skills */}
+            <motion.section
+                className="relative w-screen min-h-screen"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <div className="absolute top-[25vh] left-[15vw] w-[80vw] h-[0.5px] bg-white"/>
+
+                <div className="absolute top-[10vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start gap-10">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                        <h1>SKILLS</h1>
+                    </div>
+
+                    <div className="w-[75vw] flex flex-row items-start justify-between">
+                        <div className="flex flex-col w-[25vw] gap-3">
+                            <h2 className="text-[1.5rem]">FRONTEND</h2>
+                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">React.js</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Next.js</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Tailwind CSS</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Motion</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">React Three Fiber</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Zustand</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col w-[20vw] gap-3">
+                            <h2 className="text-[1.5rem]">BACKEND</h2>
+                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Node.js</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Python</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Java</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">FastAPI</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">SQL</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col w-[20vw] gap-3">
+                            <h2 className="text-[1.5rem]">TOOLS</h2>
+                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Windows</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">VSCode</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Cursor</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Git</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Figma</p>
+                                <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Blender</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.section>
         </motion.main>
+    )
+}
+
+function Email() {
+    const [copied, setCopied] = useState(false);
+    const set = useCursorStore((state) => state.setCursorType);
+
+    const copy = async () => {
+        await navigator.clipboard.writeText("kento9941@gmail.com");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1200);
+    };
+
+    return (
+        <button onClick={copy} className="relative cursor-pointer pt-[1rem] font-light" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+            <i className="fa-regular fa-envelope pe-[0.5rem]" />kento9941@gmail.com
+            {copied && (
+                <span className="absolute bottom-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">
+                    Copied!
+                </span>
+            )}
+        </button>
     )
 }

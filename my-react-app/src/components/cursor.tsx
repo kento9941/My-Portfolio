@@ -10,8 +10,9 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
         backgroundColor: "transparent"
     },
     "hover": {
-        scale: 0.5,
-        backgroundColor: "white"
+        scale: 1.5,
+        backgroundColor: "#f9f9f966",
+        border: "none"
     },
     "View": {
         scale: 3,
