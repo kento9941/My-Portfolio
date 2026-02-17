@@ -19,43 +19,13 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
         backgroundColor: "white",
         mixBlendMode: "difference",
     },
-    "Mother and Child": {
-        scale: 4,
-        border: "none",
-        backgroundColor: "transparent",
-        opacity: 0.5,
-    },
-    "Girl and Dog": {
-        scale: 4,
-        border: "none",
-        backgroundColor: "transparent",
-        opacity: 0.5,
-    },
-    "Snail": {
-        scale: 4,
-        border: "none",
-        backgroundColor: "transparent",
-        opacity: 0.5,
-    },
-    "Prayer": {
-        scale: 4,
-        border: "none",
-        backgroundColor: "transparent",
-        opacity: 0.5,
-    },
-    "Shape of Love": {
-        scale: 4,
-        border: "none",
-        backgroundColor: "transparent",
-        opacity: 0.5,
-    },
     "hidden": {
         scale: 0,
         opacity: 0,
     }
 }
 
-const textCursorTypes: CursorType[] = ["View", "Mother and Child", "Girl and Dog", "Snail", "Prayer", "Shape of Love"];
+const textCursorTypes: CursorType[] = ["View"];
 
 export default function Cursor() {
     const cursorX = useMotionValue(-100);

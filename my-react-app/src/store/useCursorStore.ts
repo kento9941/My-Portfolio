@@ -3,12 +3,7 @@ import { create } from "zustand";
 export type CursorType = 
     | "default"
     | "hover"
-    | "View"
-    | "Mother and Child"
-    | "Girl and Dog"
-    | "Snail"
-    | "Prayer"
-    | "Shape of Love";
+    | "View";
 
 interface CursorStore {
     cursorType: CursorType;

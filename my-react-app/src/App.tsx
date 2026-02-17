@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
+import Gallery from "./pages/Gallery";
 import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
 import Navigation from "./components/navigation/navigation";
@@ -67,6 +68,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/Works" element={<Works />} />
+        <Route path="/Gallery" element={<Gallery />} />
       </Routes>
     </AnimatePresence>
   )

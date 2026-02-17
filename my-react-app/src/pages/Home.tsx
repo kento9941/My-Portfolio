@@ -35,7 +35,7 @@ export default function Home() {
                 <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
 
                 <div className="absolute top-[15vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                         <h1>ABOUT ME</h1>
                     </div>
 
@@ -52,7 +52,6 @@ export default function Home() {
                             null,
                             "はじめまして、Kentoと申します。",
                             "オーストラリアのアデレード大学でITを専攻しているWebエンジニアです。",
-                            "ジニアです。",
                             "主にWebアプリケーション開発やWebサイト制作に力を入れており、新しい",
                             "技術や表現にも積極的に挑戦しています。",
                             "プログラミング以外では、折り紙、バスケ、テニス、チェスが好きです。",
@@ -237,7 +236,7 @@ function Email() {
     };
 
     return (
-        <button onClick={copy} className="relative cursor-pointer font-thin" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+        <button onClick={copy} className="relative cursor-pointer font-thin italic" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
             kento9941@gmail.com
             {copied && (
                 <span className="absolute bottom-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">

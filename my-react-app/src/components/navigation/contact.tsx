@@ -19,30 +19,14 @@ type Props = {
 function Icon({brand, url} : Props) {
     const set = useCursorStore((state) => state.setCursorType);
     return (
-        <a href={url} target="_blank" rel="noopener noreferrer" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+        <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => set("hover")}
+            onMouseLeave={() => set("default")}
+        >
             <i className={`${brand} pe-[0.5rem]`} aria-hidden="true" />
         </a>
-    )
-}
-
-function Email() {
-    const [copied, setCopied] = useState(false);
-    const set = useCursorStore((state) => state.setCursorType);
-
-    const copy = async () => {
-        await navigator.clipboard.writeText("kento9941@gmail.com");
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1200);
-    };
-
-    return (
-        <button onClick={copy} className="relative cursor-pointer" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
-            <i className="fa-regular fa-envelope pe-[0.5rem]" />kento9941@gmail.com
-            {copied && (
-                <span className="absolute top-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">
-                    Copied!
-                </span>
-            )}
-        </button>
     )
 }

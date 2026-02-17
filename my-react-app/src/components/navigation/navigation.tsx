@@ -13,6 +13,7 @@ export default function Navigation() {
         >
             <NavButton title="HOME" link="/" />
             <NavButton title="WORKS" link="/Works" />
+            <NavButton title="GALLERY" link="/Gallery" />
             <Contact />
         </motion.div>
     )
