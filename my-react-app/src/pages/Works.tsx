@@ -17,10 +17,13 @@ export default function Works() {
         <motion.main
             className="relative w-full min-h-screen flex flex-row justify-start items-start pt-[40vh] pb-[30vh] pl-[15vw]"
             exit={{ opacity: 0, filter: "blur(5px)" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="w-[40vw] flex flex-col gap-[40vh]">
                 <motion.img
+                    initial={{ opacity: 0, filter: "blur(5px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     src="/sms.gif"
                     alt="Strudel Music Sequencer"
                     className="w-[40vw]"
@@ -64,7 +67,12 @@ export default function Works() {
                 </a>
             </div>
 
-            <div className="fixed top-[15vh] left-[60vw] w-[35vw] flex flex-col ">
+            <motion.div
+                className="fixed top-[15vh] left-[60vw] w-[35vw] flex flex-col"
+                initial={{ opacity: 0, filter: "blur(5px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                     <h1>WORKS</h1>
                 </div>
@@ -85,9 +93,14 @@ export default function Works() {
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="fixed top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
+            <motion.div
+                className="fixed top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"
+                initial={{ opacity: 0, filter: "blur(5px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            />
         </motion.main>
     )
 }

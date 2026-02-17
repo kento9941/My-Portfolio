@@ -6,6 +6,7 @@ import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
 import Navigation from "./components/navigation/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollReset from "./components/scroll-reset";
 
 export default function App() {
   return (
@@ -39,7 +40,7 @@ export default function App() {
       </div>
 
       <BrowserRouter>
-        {/* custom cursor */}
+        <ScrollReset />
         <Cursor />
 
         <header>
