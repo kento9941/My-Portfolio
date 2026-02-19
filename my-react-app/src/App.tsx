@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
+import WorkDetail from "./pages/WorkDetail";
 import Gallery from "./pages/Gallery";
 import Cursor from "./components/cursor";
 import MouseEffectScene from "./shaders/mouse-effect-scene";
 import Navigation from "./components/navigation/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReset from "./components/scroll-reset";
+import { useCursorStore } from "./store/useCursorStore";
 
 export default function App() {
   return (
@@ -64,11 +66,17 @@ export default function App() {
 
 function AnimatedRoutes() {
   const location = useLocation();
+  const set = useCursorStore((state) => state.setCursorType);
+
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => set("default")}
+    >
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/Works" element={<Works />} />
+        <Route path="/Works/:id" element={<WorkDetail />} />
         <Route path="/Gallery" element={<Gallery />} />
       </Routes>
     </AnimatePresence>

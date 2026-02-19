@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <motion.main
             className="overflow-x-hidden"
-            exit={{ opacity: 0, filter: "blur(5px)" }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* about */}
@@ -69,7 +69,7 @@ export default function Home() {
 
             {/* motivation */}
             <motion.section
-                className="relative w-screen h-[90vh]"
+                className="relative w-screen min-h-screen"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -77,13 +77,13 @@ export default function Home() {
             >
                 <ParallaxImage
                     src="/me.jpeg"
-                    classname="absolute top-[20vh] left-[60vw] w-[35vw] h-[45vh] flex items-center justify-center overflow-hidden"
+                    classname="absolute top-[35vh] left-[60vw] w-[35vw] h-[45vh] flex items-center justify-center overflow-hidden"
                     hover="default"
                 />
 
-                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
+                <div className="absolute top-[30vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
 
-                <div className="absolute top-[0vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
+                <div className="absolute top-[15vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
                         <h1>MOTIVATION</h1>
                     </div>
@@ -119,7 +119,7 @@ export default function Home() {
 
             {/* philosophy */}
             <motion.section
-                className="relative w-screen h-[70vh]"
+                className="relative w-screen min-h-[90vh]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -127,18 +127,18 @@ export default function Home() {
             >
                 <ParallaxImage
                     src="/architecture.png"
-                    classname="absolute top-[10vh] left-[20vw] w-[24vw] h-[28vh] flex items-center justify-center overflow-hidden"
+                    classname="absolute top-[25vh] left-[20vw] w-[24vw] h-[28vh] flex items-center justify-center overflow-hidden"
                     hover="default"
                 />
 
-                <div className="absolute top-[40vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
+                <div className="absolute top-[55vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
                     <p className="italic -ml-[1rem]">"God is in the details"</p>
                     <p className="pt-[0.5rem] pl-[1rem]">- Mies van der Rohe</p>
                 </div>
 
-                <div className="absolute top-[15vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
+                <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
 
-                <div className="absolute top-[0vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
+                <div className="absolute top-[15vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
                         <h1>PHILOSOPHY</h1>
                     </div>

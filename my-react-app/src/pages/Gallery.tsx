@@ -6,15 +6,15 @@ export default function Gallery() {
     return (
         <motion.main
             className="relative w-screen pt-[40vh] pb-[20vh] pl-[20vw]"
-            initial={{ opacity: 0, filter: "blur(5px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, filter: "blur(5px)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="absolute top-[15vh] left-[20vw] w-[70vw] h-[15vh] flex flex-row items-end justify-between">
                 <h1 className="text-[3rem] font-thin">Origami Gallery</h1>
                 <a
-                    className="flex flex-row items-end justify-center text-[1rem] font-light mb-1 italic"
+                    className="flex flex-row items-end justify-center text-[1rem] font-light mb-1"
                     href="https://www.instagram.com/kent_origami/"
                     target="_blank"
                     rel="noopener noreferrer"
