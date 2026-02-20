@@ -7,14 +7,14 @@ export default function Home() {
     return (
         <motion.main
             className="overflow-x-hidden"
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* about */}
             <motion.section
                 className="relative w-screen min-h-screen"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -70,8 +70,8 @@ export default function Home() {
             {/* motivation */}
             <motion.section
                 className="relative w-screen min-h-screen"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -120,8 +120,8 @@ export default function Home() {
             {/* philosophy */}
             <motion.section
                 className="relative w-screen min-h-[90vh]"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -171,8 +171,8 @@ export default function Home() {
             {/* skills */}
             <motion.section
                 className="relative w-screen min-h-screen"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >

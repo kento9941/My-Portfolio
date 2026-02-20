@@ -9,9 +9,9 @@ export default function WorkDetail() {
     return (
         <motion.main
             className="relative w-screen min-h-screen flex flex-col pt-[15vh] pb-[50vh] pl-[20vw] pr-[5vw]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="absolute top-[30vh] left-[20vw] w-[75vw] h-[0.5px] bg-white" />
@@ -114,7 +114,7 @@ export default function WorkDetail() {
 
                     <div className="relative w-[60vw] h-[80vh] flex items-center justify-center">
                         <img
-                            src="/colorful-bg.jpg"
+                            src="/colorful-bg.png"
                             className="absolute inset-0 w-full h-full object-contain"
                         />
                         <img

@@ -17,14 +17,14 @@ export default function Works() {
     return(
         <motion.main
             className="relative w-full min-h-screen flex flex-row justify-start items-start pt-[40vh] pb-[30vh] pl-[15vw]"
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="w-[40vw] flex flex-col gap-[40vh]">
                 <Link key="1" to="/Works/1">
                     <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0, filter: "blur(3px)" }}
+                        animate={{ opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         src="/sms.gif"
                         alt="Strudel Music Sequencer"
@@ -72,7 +72,7 @@ export default function Works() {
 
             <motion.div
                 className="fixed top-[15vh] left-[60vw] w-[35vw] flex flex-col"
-                initial={{ opacity: 0, filter: "blur(5px)" }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -101,7 +101,7 @@ export default function Works() {
 
             <motion.div
                 className="fixed top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"
-                initial={{ opacity: 0, filter: "blur(5px)" }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             />
