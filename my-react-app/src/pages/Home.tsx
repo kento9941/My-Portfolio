@@ -18,15 +18,15 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[60vh] flex flex-col items-start justify-start leading-none">
-                    <div className="text-[5rem] font-light">
+                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[60vh] flex flex-col items-start justify-start font-light leading-none">
+                    <div className="text-[5rem] font-thin">
                         <h1>KENTO</h1>
                         <h1>KAWAZOE</h1>
                     </div>
-                    <div className="text-[1rem] font-thin pl-2">
+                    <div className="text-[1rem] pl-2">
                         Web Developer / Designer
                     </div>
-                    <div className="mt-auto pl-2 flex flex-col items-start justify-start text-[1rem] font-thin leading-tight">
+                    <div className="mt-auto pl-2 flex flex-col items-start justify-start text-[1rem] leading-tight">
                         <p>For business inquiries, email me at</p>
                         <Email />
                     </div>
@@ -39,30 +39,19 @@ export default function Home() {
                         <h1>ABOUT ME</h1>
                     </div>
 
-                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
-                        {[
-                            "I am currently in my final year of a Bachelor of Information",
-                            "Technology at Adelaide University.",
-                            "My main focus is web development, and I have worked on",
-                            "several full-stack personal projects.",
-                            "I enjoy exploring new technologies and experimenting with",
-                            "creative ideas.",
-                            "Outside of programming, I create origami art, play basketball,",
-                            "tennis, and chess.",
-                            null,
-                            "はじめまして、Kentoと申します。",
-                            "オーストラリアのアデレード大学でITを専攻しているWebエンジニアです。",
-                            "主にWebアプリケーション開発やWebサイト制作に力を入れており、新しい",
-                            "技術や表現にも積極的に挑戦しています。",
-                            "プログラミング以外では、折り紙、バスケ、テニス、チェスが好きです。",
-                        ].map((p, i) => (
-                            p === null ? (
-                                <div key={i} className="h-5"/>
-                            ) : (
-                                <p key={i}>{p}</p>
-                            )
-                        )
-                        )}
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                        <div>
+                            <p>I am currently in my final year of a Bachelor of Information Technology at Adelaide University.</p>
+                            <p>My main focus is web development, and I have worked on several full-stack personal projects. I enjoy exploring new technologies and experimenting with creative ideas.</p>
+                            <p>Outside of programming, I create origami art, play basketball, tennis, and chess.</p>
+                        </div>
+
+                        <div>
+                            <p>はじめまして、Kentoと申します。</p>
+                            <p>オーストラリアのアデレード大学でITを専攻しているWebエンジニアです。</p>
+                            <p>主にWebアプリケーション開発やWebサイト制作に力を入れており、新しい技術や表現にも積極的に挑戦しています。</p>
+                            <p>プログラミング以外では、折り紙、バスケ、テニス、チェスが好きです。</p>
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -84,35 +73,22 @@ export default function Home() {
                 <div className="absolute top-[30vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
 
                 <div className="absolute top-[15vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                         <h1>MOTIVATION</h1>
                     </div>
 
-                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
-                        {[
-                            "I'm a full-stack developer with a growing focus on frontend",
-                            "development.",
-                            "While I'm still exploring where I want my career to evolve,",
-                            "I've discovered that building user interfaces is what excites",
-                            "me the most.",
-                            "That's why I'm currently dedicating my energy to improving",
-                            "both my technical execution and design sensitivity on the",
-                            "frontend.",
-                            null,
-                            "主にフルスタック開発をしていますが、フロントエンドにより強い関心が",
-                            "あります。",
-                            "キャリアの方向性は模索中ですが、これまでの個人開発やチーム開発を通",
-                            "して、ユーザー体験に関わる領域に最も魅力を感じるようになりました。",
-                            "現在は、技術的な実装力とデザインへの理解の双方を高めることを目標に",
-                            "取り組んでいます。"
-                        ].map((p, i) => (
-                            p === null ? (
-                                <div key={i} className="h-5"/>
-                            ) : (
-                                <p key={i}>{p}</p>
-                            )
-                        )
-                        )}
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                        <div>
+                            <p>I'm a full-stack developer with a growing focus on frontend development.</p>
+                            <p>While I'm still exploring where I want my career to evolve, I've discovered that building user interfaces is what excites me the most.</p>
+                            <p>That's why I'm currently dedicating my energy to improving both my technical execution and design sensitivity on the frontend.</p>
+                        </div>
+
+                        <div>
+                            <p>主にフルスタック開発をしていますが、フロントエンドにより強い関心があります。</p>
+                            <p>キャリアの方向性は模索中ですが、これまでの個人開発やチーム開発を通して、ユーザー体験に関わる領域に最も魅力を感じるようになりました。</p>
+                            <p>現在は、技術的な実装力とデザインへの理解の双方を高めることを目標に取り組んでいます。</p>
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -132,8 +108,8 @@ export default function Home() {
                 />
 
                 <div className="absolute top-[55vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
-                    <p className="italic -ml-[1rem]">"God is in the details"</p>
-                    <p className="pt-[0.5rem] pl-[1rem]">- Mies van der Rohe</p>
+                    <p className="italic">"God is in the details"</p>
+                    <p className="pt-[0.5rem] pl-[4rem]">- Mies van der Rohe</p>
                 </div>
 
                 <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
@@ -184,9 +160,9 @@ export default function Home() {
                     </div>
 
                     <div className="w-[75vw] flex flex-row items-start justify-between">
-                        <div className="flex flex-col w-[25vw] gap-3">
+                        <div className="flex flex-col w-[25vw] gap-3  font-light">
                             <h2 className="text-[1.5rem]">FRONTEND</h2>
-                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                            <div className="w-full text-[0.8rem] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">React.js</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Next.js</p>
@@ -198,7 +174,7 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col w-[20vw] gap-3">
                             <h2 className="text-[1.5rem]">BACKEND</h2>
-                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                            <div className="w-full text-[0.8rem] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Node.js</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Python</p>
@@ -209,7 +185,7 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col w-[20vw] gap-3">
                             <h2 className="text-[1.5rem]">TOOLS</h2>
-                            <div className="w-full text-[0.8rem] font-light flex flex-wrap gap-2">
+                            <div className="w-full text-[0.8rem] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Windows</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">VSCode</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Cursor</p>
@@ -236,7 +212,7 @@ function Email() {
     };
 
     return (
-        <button onClick={copy} className="relative cursor-pointer font-thin italic" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+        <button onClick={copy} className="relative cursor-pointer font-light italic" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
             kento9941@gmail.com
             {copied && (
                 <span className="absolute bottom-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">

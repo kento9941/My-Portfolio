@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { projects } from "../components/projects";
+import { useCursorStore } from "../store/useCursorStore";
 
 export default function WorkDetail() {
     const { id } = useParams();
     const data = projects.find((p) => p.id === id);
 
+    const set = useCursorStore((state) => state.setCursorType);
+
     return (
         <motion.main
-            className="relative w-screen min-h-screen flex flex-col pt-[40vh] pb-[30vh] pl-[15vw] pr-[5vw]"
+            className="relative w-screen min-h-screen flex flex-col pt-[40vh] pl-[15vw] pr-[5vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -19,6 +22,26 @@ export default function WorkDetail() {
                 exit={{ opacity: 0, filter: "blur(3px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             />
+
+            <NavLink to="/Works">
+                <motion.div
+                    className="fixed top-[5vh] left-[15vw] text-[1rem] font-light flex flex-row items-center gap-1"
+                    initial={{ opacity: 0, filter: "blur(3px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, filter: "blur(3px)" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    onMouseEnter={() => set("hover")}
+                    onMouseLeave={() => set("default")}
+                >
+                    <span>
+                        <svg width="0.5rem" height="1rem" viewBox="0 0 37 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.646447" y1="36.0018" x2="36.0018" y2="0.646455" stroke="white" strokeWidth="3" />
+                            <line x1="0.353553" y1="35.6464" x2="35.7089" y2="71.0018" stroke="white" strokeWidth="3" />
+                        </svg>
+                    </span>
+                    <span>BACK</span>
+                </motion.div>
+            </NavLink>
 
             <motion.div
                 className="fixed top-[15vh] left-[15vw] w-[80vw] flex flex-row items-end justify-between"
@@ -31,21 +54,27 @@ export default function WorkDetail() {
                     <h1>{data?.title}</h1>
                 </div>
                 <div className="flex flex-row items-end gap-[1rem] text-[1rem] font-light mb-2">
-                    <a
-                        href={data?.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1"
-                    >
-                        GitHub
-                        <span>
-                            <svg width="1rem" height="1rem" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="3"/>
-                                <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="3"/>
-                                <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="3"/>
-                            </svg>
-                        </span>
-                    </a>
+                    {data?.github &&
+                    (
+                        <a
+                            href={data?.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1"
+                            onMouseEnter={() => set("hover")}
+                            onMouseLeave={() => set("default")}
+                        >
+                            GitHub
+                            <span>
+                                <svg width="1rem" height="1rem" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="3"/>
+                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="3"/>
+                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            </span>
+                        </a>
+                    )}
+
                     {data?.demo &&
                     (
                         <a
@@ -53,6 +82,8 @@ export default function WorkDetail() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1"
+                            onMouseEnter={() => set("hover")}
+                            onMouseLeave={() => set("default")}
                         >
                             Demo
                             <span>
@@ -68,7 +99,7 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="flex flex-col"
+                className="flex flex-col h-[370vh]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -124,7 +155,7 @@ export default function WorkDetail() {
                     </div>
                 </div>
 
-                <div className="flex flex-row items-start justify-between font-light">
+                <div className="flex flex-row items-start justify-between font-light mb-[30v]">
                     <div className="w-[35vw] flex flex-col gap-8">
                         <div className="flex flex-col items-start justify-between gap-2">
                             <h2 className="text-[1.2rem]">TOOLS</h2>

@@ -36,7 +36,7 @@ function NavButton({title, link}: Props) {
                 onMouseLeave={() => set("default")}
             >
                 {title}
-                <span className={`absolute bottom-0 left-0 h-[1px] bg-white
+                <span className={`absolute bottom-0 left-0 h-[0.5px] bg-white
                     ${isActive ? "w-full" : "w-0 transition-all duration-500 ease-out group-hover:w-full"}`} />
             </div>
             )}

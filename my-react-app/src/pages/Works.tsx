@@ -35,24 +35,31 @@ export default function Works() {
                         onMouseLeave={() => set("default")}
                     />
                 </Link>
-                <motion.img
-                    src="/ms.gif"
-                    alt="Menu Scanner"
-                    className="w-[40vw]"
-                    onViewportEnter={() => setFocus(works[1])}
-                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
-                    onMouseEnter={() => set("View")}
-                    onMouseLeave={() => set("default")}
-                />
-                <motion.img
-                    src="/portfolio1.gif"
-                    alt="Portfolio 1"
-                    className="w-[40vw]"
-                    onViewportEnter={() => setFocus(works[2])}
-                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
-                    onMouseEnter={() => set("View")}
-                    onMouseLeave={() => set("default")}
-                />
+                
+                <Link key="2" to="/Works/2">
+                    <motion.img
+                        src="/ms.gif"
+                        alt="Menu Scanner"
+                        className="w-[40vw]"
+                        onViewportEnter={() => setFocus(works[1])}
+                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                        onMouseEnter={() => set("View")}
+                        onMouseLeave={() => set("default")}
+                    />
+                </Link>
+
+                <Link key="3" to="/Works/3">
+                    <motion.img
+                        src="/portfolio1.gif"
+                        alt="Portfolio 1"
+                        className="w-[40vw]"
+                        onViewportEnter={() => setFocus(works[2])}
+                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                        onMouseEnter={() => set("View")}
+                        onMouseLeave={() => set("default")}
+                    />
+                </Link>
+
                 <a
                     href="https://openprocessing.org/sketch/2655027"
                     target="_blank"
