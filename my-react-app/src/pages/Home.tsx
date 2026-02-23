@@ -14,7 +14,7 @@ export default function Home() {
         >
             {/* about */}
             <motion.section
-                className="relative w-screen min-h-screen"
+                className="relative w-screen min-h-[80vh]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -28,7 +28,7 @@ export default function Home() {
                     <div className="text-[1rem] pl-2">
                         Web Developer / Designer
                     </div>
-                    <div className="mt-auto pl-2 flex flex-col items-start justify-start text-[1rem] leading-tight">
+                    <div className="mt-[30vh] pl-2 flex flex-col items-start justify-start text-[1rem] leading-tight">
                         <p>For business inquiries, email me at</p>
                         <Email />
                     </div>
@@ -41,7 +41,7 @@ export default function Home() {
                         <h1>ABOUT ME</h1>
                     </div>
 
-                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.8rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
                         <div>
                             <p>I am currently in my final year of a Bachelor of Information Technology at Adelaide University.</p>
                             <p>My main focus is web development, and I have worked on several full-stack personal projects. I enjoy exploring new technologies and experimenting with creative ideas.</p>
@@ -60,7 +60,7 @@ export default function Home() {
 
             {/* motivation */}
             <motion.section
-                className="relative w-screen min-h-screen"
+                className="relative w-screen min-h-[80vh]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -74,12 +74,12 @@ export default function Home() {
 
                 <div className="absolute top-[30vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
 
-                <div className="absolute top-[17vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
+                <div className="absolute top-[15vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                         <h1>MOTIVATION</h1>
                     </div>
 
-                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.8rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
                         <div>
                             <p>I'm a full-stack developer with a growing focus on frontend development.</p>
                             <p>While I'm still exploring where I want my career to evolve, I've discovered that building user interfaces is what excites me the most.</p>
@@ -97,7 +97,7 @@ export default function Home() {
 
             {/* philosophy */}
             <motion.section
-                className="relative w-screen min-h-[90vh]"
+                className="relative w-screen min-h-[80vh]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -109,7 +109,7 @@ export default function Home() {
                     hover="default"
                 />
 
-                <div className="absolute top-[60vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
+                <div className="absolute top-[60vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.8rem] flex flex-col p-5">
                     <p className="italic">"God is in the details"</p>
                     <p className="pt-[0.5rem] pl-[4rem]">- Mies van der Rohe</p>
                 </div>
@@ -121,7 +121,7 @@ export default function Home() {
                         <h1>PHILOSOPHY</h1>
                     </div>
 
-                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.8rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
                         <div>
                             <p>For me, strong products are built to be robust, reliable, and thoughtful.</p>
                             <p>Aligned layouts, consistent typography, and carefully considered spacing.</p>
@@ -138,7 +138,7 @@ export default function Home() {
 
             {/* skills */}
             <motion.section
-                className="relative w-screen min-h-screen"
+                className="relative w-screen min-h-[80vh]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -188,7 +188,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="ml-auto flex flex-col items-end justify-center gap-4">
+                    <div className="ml-auto flex flex-col items-end justify-center gap-4 mt-[10vh]">
                         <NavLink
                             to="/Works"
                             className="flex flex-row items-center justify-center gap-2 text-[1rem] font-light"

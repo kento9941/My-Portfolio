@@ -100,17 +100,17 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="flex flex-col h-[370vh] w-full"
+                className="flex flex-col min-h-[370vh] w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <div className="w-full flex flex-col items-center justify-start gap-[10vh] pb-[40vh]">
-                    <div className="relative w-[50vw] h-[60vh] flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg1}
-                            className="absolute inset-0 w-full h-full object-contain"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
                             src={data?.image1}
@@ -119,10 +119,10 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] h-[60vh] flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg2}
-                            className="absolute inset-0 w-full h-full object-contain"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
                             src={data?.image2}
@@ -131,10 +131,10 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] h-[60vh] flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg3}
-                            className="absolute inset-0 w-full h-full object-contain"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
                             src={data?.image3}
@@ -143,10 +143,10 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] h-[60vh] flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg4}
-                            className="absolute inset-0 w-full h-full object-contain"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
                             src={data?.image4}
@@ -156,7 +156,7 @@ export default function WorkDetail() {
                     </div>
                 </div>
 
-                <div className="flex flex-row items-start justify-between font-light mb-[30v]">
+                <div className="h-[60vh] flex flex-row items-start justify-between font-light mt-auto mb-8">
                     <div className="w-[35vw] flex flex-col gap-8">
                         <div className="flex flex-col items-start justify-between gap-2">
                             <h2 className="text-[1.2rem]">TOOLS</h2>
@@ -180,29 +180,27 @@ export default function WorkDetail() {
                         </div>
                     </div>
 
-                    <div className="w-[35vw] flex flex-col items-start justify-between gap-2">
+                    <div className="w-[35vw] h-full flex flex-col items-start justify-between gap-2">
                         <h2 className="text-[1.2rem]">SUMMARY</h2>
                         <p className="text-[1rem]">{data?.summary}</p>
-                    </div>
-                </div>
 
-                <div className="ml-auto text-[1.2rem] font-light mt-auto mb-6">
-                    <Link
-                        key={nextData?.id}
-                        to={`/Works/${nextData?.id}`}
-                        onMouseEnter={() => set("hover")}
-                        onMouseLeave={() => set("default")}
-                        className="flex flex-row items-center justify-end gap-2"
-                    >
-                        <span>{nextData?.title}</span>
-                        <span>
-                            <svg width="1.8rem" height="1.2rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
-                                <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
-                                <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
-                            </svg>
-                        </span>
-                    </Link>
+                        <Link
+                            key={nextData?.id}
+                            to={`/Works/${nextData?.id}`}
+                            onMouseEnter={() => set("hover")}
+                            onMouseLeave={() => set("default")}
+                            className="flex flex-row items-center justify-end text-[1.2rem] font-light mt-auto ml-auto gap-2"
+                        >
+                            <span>{nextData?.title}</span>
+                            <span>
+                                <svg width="1.8rem" height="1.2rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            </span>
+                        </Link>
+                    </div>
                 </div>
             </motion.div>
         </motion.main>
