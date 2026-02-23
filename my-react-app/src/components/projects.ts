@@ -15,7 +15,8 @@ export const projects = [
         bg1: "/black-bg.jpg",
         bg2: "/grey-bg.jpg",
         bg3: "/black-bg.jpg",
-        bg4: "/grey-bg.jpg",
+        bg4: "/cloth-bg.jpg",
+        next: "2",
     },
     {
         id: "2",
@@ -30,10 +31,11 @@ export const projects = [
         image2: "/ms2.gif",
         image3: "/ms3.png",
         image4: "/ms4.gif",
-        bg1: "/flower-bg.jpg",
+        bg1: "/cloth-bg.jpg",
         bg2: "/flower-bg.jpg",
         bg3: "/beige-bg.jpg",
         bg4: "/beige-bg.jpg",
+        next: "3"
     },
     {
         id: "3",
@@ -48,9 +50,10 @@ export const projects = [
         image2: "/portfolio2.png",
         image3: "/portfolio3.gif",
         image4: "/portfolio4.gif",
-        bg1: "/office-bg.jpg",
-        bg2: "/cloth-bg.jpg",
+        bg1: "/plant-bg.jpg",
+        bg2: "/beige-bg.jpg",
         bg3: "/office-bg.jpg",
         bg4: "/cloth-bg.jpg",
+        next: "1"
     }
 ] 

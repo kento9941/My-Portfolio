@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { projects } from "../components/projects";
 import { useCursorStore } from "../store/useCursorStore";
 
 export default function WorkDetail() {
     const { id } = useParams();
     const data = projects.find((p) => p.id === id);
+    const nextData = projects.find((p) => p.id === data?.next)
 
     const set = useCursorStore((state) => state.setCursorType);
 
@@ -99,7 +100,7 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="flex flex-col h-[370vh]"
+                className="flex flex-col h-[370vh] w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -183,6 +184,25 @@ export default function WorkDetail() {
                         <h2 className="text-[1.2rem]">SUMMARY</h2>
                         <p className="text-[1rem]">{data?.summary}</p>
                     </div>
+                </div>
+
+                <div className="ml-auto text-[1.2rem] font-light mt-auto mb-6">
+                    <Link
+                        key={nextData?.id}
+                        to={`/Works/${nextData?.id}`}
+                        onMouseEnter={() => set("hover")}
+                        onMouseLeave={() => set("default")}
+                        className="flex flex-row items-center justify-end gap-2"
+                    >
+                        <span>{nextData?.title}</span>
+                        <span>
+                            <svg width="1.8rem" height="1.2rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
+                                <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
+                                <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
+                            </svg>
+                        </span>
+                    </Link>
                 </div>
             </motion.div>
         </motion.main>

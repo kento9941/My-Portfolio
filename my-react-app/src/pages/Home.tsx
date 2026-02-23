@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useCursorStore } from "../store/useCursorStore";
 import ParallaxImage from "../components/parallax-image";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
+    const set = useCursorStore((state) => state.setCursorType);
     return (
         <motion.main
             className="overflow-x-hidden"
@@ -18,7 +20,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[60vh] flex flex-col items-start justify-start font-light leading-none">
+                <div className="absolute top-[15vh] left-[15vw] w-[35vw] h-[70vh] flex flex-col items-start justify-start font-light leading-none">
                     <div className="text-[5rem] font-thin">
                         <h1>KENTO</h1>
                         <h1>KAWAZOE</h1>
@@ -66,13 +68,13 @@ export default function Home() {
             >
                 <ParallaxImage
                     src="/me.jpeg"
-                    classname="absolute top-[35vh] left-[60vw] w-[35vw] h-[45vh] flex items-center justify-center overflow-hidden"
+                    classname="absolute top-[30vh] left-[60vw] w-[35vw] h-[45vh] flex items-center justify-center overflow-hidden"
                     hover="default"
                 />
 
                 <div className="absolute top-[30vh] left-[15vw] w-[35vw] h-[0.5px] bg-white"/>
 
-                <div className="absolute top-[15vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
+                <div className="absolute top-[17vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                         <h1>MOTIVATION</h1>
                     </div>
@@ -103,11 +105,11 @@ export default function Home() {
             >
                 <ParallaxImage
                     src="/architecture.png"
-                    classname="absolute top-[25vh] left-[20vw] w-[24vw] h-[28vh] flex items-center justify-center overflow-hidden"
+                    classname="absolute top-[30vh] left-[20vw] w-[24vw] h-[28vh] flex items-center justify-center overflow-hidden"
                     hover="default"
                 />
 
-                <div className="absolute top-[55vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
+                <div className="absolute top-[60vh] left-[20vw] w-[20vw] flex items-center justify-center text-[0.7rem] flex flex-col p-5">
                     <p className="italic">"God is in the details"</p>
                     <p className="pt-[0.5rem] pl-[4rem]">- Mies van der Rohe</p>
                 </div>
@@ -115,31 +117,21 @@ export default function Home() {
                 <div className="absolute top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"/>
 
                 <div className="absolute top-[15vh] left-[60vw] h-[70vh] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
+                    <div className="h-[15vh] flex items-end text-[3rem] font-thin">
                         <h1>PHILOSOPHY</h1>
                     </div>
 
-                    <div className="relative flex flex-col overflow-hidden pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light">
-                        {[
-                            "For me, strong products are built to be robust, reliable,",
-                            "and thoughtful.",
-                            "Aligned layouts, consistent typography, and carefully",
-                            "considered spacing.",
-                            "I focus on creating interfaces where clarity, balance, and",
-                            "usability come first.",
-                            null,
-                            "私にとって優れたプロダクトとは堅牢で信頼性があり、細部まで丁寧に",
-                            "設計されたものです。",
-                            "整ったレイアウトやタイポグラフィ、余白などを大切にし、使いやすさ",
-                            "を最優先にしたインターフェースを作ることを心がけています。",
-                        ].map((p, i) => (
-                            p === null ? (
-                                <div key={i} className="h-5"/>
-                            ) : (
-                                <p key={i}>{p}</p>
-                            )
-                        )
-                        )}
+                    <div className="w-[35vw] flex flex-col pt-[7.5vh] text-[0.7rem] tracking-[0.1rem] font-light gap-5 leading-[1.2rem]">
+                        <div>
+                            <p>For me, strong products are built to be robust, reliable, and thoughtful.</p>
+                            <p>Aligned layouts, consistent typography, and carefully considered spacing.</p>
+                            <p>I focus on creating interfaces where clarity, balance, and usability come first.</p>
+                        </div>
+
+                        <div>
+                            <p>私にとって優れたプロダクトとは堅牢で信頼性があり、細部まで丁寧に設計されたものです。</p>
+                            <p>整ったレイアウトやタイポグラフィ、余白などを大切にし、使いやすさを最優先にしたインターフェースを作ることを心がけています。</p>
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -154,7 +146,7 @@ export default function Home() {
             >
                 <div className="absolute top-[25vh] left-[15vw] w-[80vw] h-[0.5px] bg-white"/>
 
-                <div className="absolute top-[10vh] left-[15vw] h-[70vh] flex flex-col items-start justify-start gap-10">
+                <div className="absolute top-[10vh] left-[15vw] w-[80vw] flex flex-col items-start justify-start gap-10">
                     <div className="h-[15vh] flex items-end text-[3rem] font-thin overflow-hidden">
                         <h1>SKILLS</h1>
                     </div>
@@ -194,6 +186,39 @@ export default function Home() {
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Blender</p>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="ml-auto flex flex-col items-end justify-center gap-4">
+                        <NavLink
+                            to="/Works"
+                            className="flex flex-row items-center justify-center gap-2 text-[1rem] font-light"
+                            onMouseEnter={() => set("hover")}
+                            onMouseLeave={() => set("default")}
+                        >
+                            <span>WORKS</span>
+                            <span>
+                                <svg width="1.5rem" height="1rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            </span>
+                        </NavLink>
+                        <NavLink
+                            to="/Gallery"
+                            className="flex flex-row items-center justify-center gap-2 text-[1rem] font-light"
+                            onMouseEnter={() => set("hover")}
+                            onMouseLeave={() => set("default")}
+                        >
+                            <span>GALLERY</span>
+                            <span>
+                                <svg width="1.5rem" height="1rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            </span>
+                        </NavLink>
                     </div>
                 </div>
             </motion.section>
