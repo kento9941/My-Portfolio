@@ -26,7 +26,7 @@ export default function WorkDetail() {
 
             <NavLink to="/Works">
                 <motion.div
-                    className="fixed top-[5vh] left-[15vw] text-[1rem] font-light flex flex-row items-center gap-1"
+                    className="fixed top-[5vh] left-[15vw] text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1"
                     initial={{ opacity: 0, filter: "blur(3px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, filter: "blur(3px)" }}
@@ -35,9 +35,9 @@ export default function WorkDetail() {
                     onMouseLeave={() => set("default")}
                 >
                     <span>
-                        <svg width="0.5rem" height="1rem" viewBox="0 0 37 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="0.646447" y1="36.0018" x2="36.0018" y2="0.646455" stroke="white" strokeWidth="3" />
-                            <line x1="0.353553" y1="35.6464" x2="35.7089" y2="71.0018" stroke="white" strokeWidth="3" />
+                        <svg width="clamp(1rem,1.5vw,1.5rem)" height="clamp(1rem,1.5vw,1.5rem)" viewBox="0 0 37 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.646447" y1="36.0018" x2="36.0018" y2="0.646455" stroke="white" strokeWidth="4" />
+                            <line x1="0.353553" y1="35.6464" x2="35.7089" y2="71.0018" stroke="white" strokeWidth="4" />
                         </svg>
                     </span>
                     <span>BACK</span>
@@ -51,10 +51,10 @@ export default function WorkDetail() {
                 exit={{ opacity: 0, filter: "blur(3px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[3rem] font-thin">
+                <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
                     <h1>{data?.title}</h1>
                 </div>
-                <div className="flex flex-row items-end gap-[1rem] text-[1rem] font-light mb-2">
+                <div className="flex flex-row items-end gap-[1rem] text-[clamp(1rem,1.5vw,1.5rem)] font-light mb-[clamp(0.5rem,1.2vh,0.8rem)]">
                     {data?.github &&
                     (
                         <a
@@ -67,10 +67,10 @@ export default function WorkDetail() {
                         >
                             GitHub
                             <span>
-                                <svg width="1rem" height="1rem" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="3"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="3"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="3"/>
+                                <svg width="clamp(1rem,1.5vw,1.5rem)" height="clamp(1rem,1.5vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
+                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
+                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
                                 </svg>
                             </span>
                         </a>
@@ -88,10 +88,10 @@ export default function WorkDetail() {
                         >
                             Demo
                             <span>
-                                <svg width="1rem" height="1rem" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="3"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="3"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="3"/>
+                                <svg width="clamp(1rem,1.5vw,1.5rem)" height="clamp(1rem,1.5vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
+                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
+                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
                                 </svg>
                             </span>
                         </a>
@@ -159,8 +159,8 @@ export default function WorkDetail() {
                 <div className="h-[60vh] flex flex-row items-start justify-between font-light mt-auto mb-8">
                     <div className="w-[35vw] flex flex-col gap-8">
                         <div className="flex flex-col items-start justify-between gap-2">
-                            <h2 className="text-[1.2rem]">TOOLS</h2>
-                            <div className="w-full text-[0.8rem] flex flex-wrap gap-2">
+                            <h2 className="text-[clamp(1.2rem,2vw,2rem)]">TOOLS</h2>
+                            <div className="w-full text-[clamp(0.8rem,1vw,1rem)] flex flex-wrap gap-2">
                                 {data?.techs.map((val) => (
                                     <p className="w-fit h-fit p-1 px-5 border border-white rounded-full">{val}</p>
                                 ))}
@@ -169,34 +169,34 @@ export default function WorkDetail() {
 
                         <div className="flex flex-row items-start justify-between">
                             <div className="flex flex-col items-start justify-between gap-2">
-                                <h2 className="text-[1.2rem]">DURATION</h2>
-                                <p className="text-[1rem]">{data?.duration}</p>
+                                <h2 className="text-[clamp(1.2rem,2vw,2rem)]">DURATION</h2>
+                                <p className="text-[clamp(1rem,1.2vw,1.5rem)]">{data?.duration}</p>
                             </div>
 
                             <div className="flex flex-col items-start justify-between gap-2">
-                                <h2 className="text-[1.2rem]">ROLES</h2>
-                                <p className="text-[1rem]">{data?.roles}</p>
+                                <h2 className="text-[clamp(1.2rem,2vw,2rem)]">ROLES</h2>
+                                <p className="text-[clamp(1rem,1.2vw,1.5rem)]">{data?.roles}</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="w-[35vw] h-full flex flex-col items-start justify-between gap-2">
-                        <h2 className="text-[1.2rem]">SUMMARY</h2>
-                        <p className="text-[1rem]">{data?.summary}</p>
+                        <h2 className="text-[clamp(1.2rem,2vw,2rem)]">SUMMARY</h2>
+                        <p className="text-[clamp(1rem,1.2vw,1.5rem)]">{data?.summary}</p>
 
                         <Link
                             key={nextData?.id}
                             to={`/Works/${nextData?.id}`}
                             onMouseEnter={() => set("hover")}
                             onMouseLeave={() => set("default")}
-                            className="flex flex-row items-center justify-end text-[1.2rem] font-light mt-auto ml-auto gap-2"
+                            className="flex flex-row items-center justify-end text-[clamp(1.2rem,2vw,2rem)] font-light mt-auto ml-auto gap-2"
                         >
                             <span>{nextData?.title}</span>
                             <span>
-                                <svg width="1.8rem" height="1.2rem" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="3"/>
-                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="3"/>
-                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="3"/>
+                                <svg width="clamp(1.2rem,2vw,2rem)" height="clamp(1.2rem,2vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
                                 </svg>
                             </span>
                         </Link>

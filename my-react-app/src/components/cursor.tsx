@@ -10,7 +10,7 @@ const cursorVariants: Record<CursorType | "hidden", any> = {
         backgroundColor: "transparent"
     },
     "hover": {
-        scale: 1.5,
+        scale: 2,
         backgroundColor: "#f9f9f966",
         border: "none"
     },
@@ -57,14 +57,14 @@ export default function Cursor() {
 
     return (
         <motion.div
-            className="fixed w-[1.5rem] h-[1.5rem] flex items-center justify-center rounded-full bg-transparent border-solid border-[1px] border-white pointer-events-none select-none z-[100]"
+            className="fixed w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.5rem,2vw,2rem)] flex items-center justify-center rounded-full bg-transparent border-solid border-[1px] border-white pointer-events-none select-none z-[100]"
             style={{x: cursorX, y: cursorY, translateX: "-50%", translateY: "-50%"}}
             variants={cursorVariants}
             animate={isVisible ? cursorType : "hidden"}
             transition={{ duration: 0.3 }}
         >
             {textCursorTypes.includes(cursorType) && (
-                <span className="text-[4px] font-medium text-black whitespace-nowrap">
+                <span className="text-[clamp(4px,4vw,6px)] font-medium text-black whitespace-nowrap">
                     { cursorType }
                 </span>
             )}

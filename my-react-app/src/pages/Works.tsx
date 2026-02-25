@@ -83,7 +83,7 @@ export default function Works() {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[3rem] font-thin">
+                <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
                     <h1>WORKS</h1>
                 </div>
 
@@ -97,10 +97,10 @@ export default function Works() {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
                         >
-                            <p className="text-[0.8rem] font-light tracking-widest mb-2">( {focus.id} )</p>
-                            <h2 className="text-[1.2rem] font-light">{focus.title}</h2>
-                            <h3 className="text-[0.8rem] font-light">{focus.sub}</h3>
-                            <p className="text-[0.8rem] font-light mt-5">{focus.description}</p>
+                            <p className="text-[clamp(1rem,1.2vw,1.5rem)] font-light tracking-widest mb-2">( {focus.id} )</p>
+                            <h2 className="text-[clamp(1.2rem,2vw,2rem)] font-light">{focus.title}</h2>
+                            <h3 className="text-clamp(clamp(1rem,1.2vw,1.5rem)] font-light">{focus.sub}</h3>
+                            <p className="text-[clamp(1rem,1.2vw,1.5rem)] font-light mt-5">{focus.description}</p>
                         </motion.div>
                     </AnimatePresence>
                 </div>

@@ -1,13 +1,20 @@
-import { useState } from "react";
 import { useCursorStore } from "../../store/useCursorStore";
 
 export default function Contact() {
     return (
-        <div className="flex flex-col items-start gap-2 pt-5 text-[1.2rem] text-white font-extralight">
-            <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
-            <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
-            <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
-        </div>
+        <>
+            <div className="lg:hidden flex flex-row items-end justify-center gap-3 text-[clamp(1rem,1.5vw,1.5rem)] text-white font-extralight">
+                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
+                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
+                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+            </div>
+
+            <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-2 lg:pt-5 lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:text-white lg:font-extralight">
+                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
+                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
+                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+            </div>
+        </>
     )
 }
 
@@ -26,7 +33,7 @@ function Icon({brand, url} : Props) {
             onMouseEnter={() => set("hover")}
             onMouseLeave={() => set("default")}
         >
-            <i className={`${brand} pe-[0.5rem]`} aria-hidden="true" />
+            <i className={`${brand}`} aria-hidden="true" />
         </a>
     )
 }

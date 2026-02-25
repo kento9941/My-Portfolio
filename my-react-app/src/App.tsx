@@ -49,7 +49,7 @@ export default function App() {
 
         <header>
           {/* navigation */}
-          <div className="fixed top-[12vh] left-[3vw] z-50">
+          <div className="fixed top-0 left-0 lg:top-[12vh] lg:left-[3vw] z-50">
             <Navigation />
           </div>
         </header>
