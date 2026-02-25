@@ -12,9 +12,11 @@ export default function Navigation() {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <NavButton title="HOME" link="/" />
-                <NavButton title="WORKS" link="/Works" />
-                <NavButton title="GALLERY" link="/Gallery" />
+                <div className="flex flex-row items-center gap-5">
+                    <NavButton title="HOME" link="/" />
+                    <NavButton title="WORKS" link="/Works" />
+                    <NavButton title="GALLERY" link="/Gallery" />
+                </div>
                 <Contact />
             </motion.div>
 
@@ -44,7 +46,7 @@ function NavButton({title, link}: Props) {
         <NavLink to={link}>
             {({isActive}) => (
             <div
-                className={`group lg:w-[clamp(3.5rem,7vw,10rem)] relative text-[clamp(0.8rem,1vw,1.5rem)] tracking-widest font-light
+                className={`group lg:w-[clamp(3.5rem,7vw,10rem)] relative text-[clamp(0.6rem,1vw,1.5rem)] tracking-widest font-light
                 ${isActive ? "text-white" : "text-[#ffffff77] transition-colors duration-500 hover:text-white"}`}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}

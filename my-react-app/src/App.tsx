@@ -59,7 +59,7 @@ export default function App() {
         </div>
       </BrowserRouter>
 
-      <footer className="fixed bottom-[0.8rem] left-[3vw] w-screen h-[1rem] text-[0.7rem] font-light">
+      <footer className="fixed bottom-[0.8rem] left-[3vw] w-screen h-[1rem] text-[clamp(0.5rem,0.8vw,1rem)] font-light">
         <p>Ⓒ Kento Kawazoe</p>
       </footer>
     </div>

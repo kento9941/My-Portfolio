@@ -22,7 +22,7 @@ export default function Home() {
             >
                 <div className="w-[80vw] lg:w-[35vw] lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-between font-light leading-none">
                     <div>
-                        <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-thin">
+                        <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-light lg:font-thin">
                             <h1>KENTO</h1>
                             <h1>KAWAZOE</h1>
                         </div>
@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
 
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
+                    <div className="h-[15vh] flex items-end text-[clamp(1.5rem,4vw,4rem)] font-light lg:font-thin">
                         <h1>ABOUT ME</h1>
                     </div>
 
@@ -69,7 +69,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <div className="lg:h-[clamp(20rem,70vh,40rem)] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
+                    <div className="h-[15vh] flex items-end text-[clamp(1.5rem,4vw,4rem)] font-light lg:font-thin">
                         <h1>MOTIVATION</h1>
                     </div>
 
@@ -119,7 +119,7 @@ export default function Home() {
                 </div>
 
                 <div className="lg:h-[clamp(20rem,70vh,40rem)] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
+                    <div className="h-[15vh] flex items-end text-[clamp(1.5rem,4vw,4rem)] font-light lg:font-thin">
                         <h1>PHILOSOPHY</h1>
                     </div>
 
@@ -163,7 +163,7 @@ export default function Home() {
             >
 
                 <div className="w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start">
-                    <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin overflow-hidden">
+                    <div className="h-[15vh] flex items-end text-[clamp(1.5rem,4vw,4rem)] font-light lg:font-thin overflow-hidden">
                         <h1>SKILLS</h1>
                     </div>
 
@@ -171,7 +171,7 @@ export default function Home() {
 
                     <div className="mt-[5vh] w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start gap-10 lg:flex-row lg:items-start lg:justify-between">
                         <div className="flex flex-col w-[80vw] lg:w-[25vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1.2rem,2vw,2rem)]">FRONTEND</h2>
+                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">FRONTEND</h2>
                             <div className="w-full text-[clamp(0.8rem,1vw,1rem)] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">React.js</p>
@@ -183,7 +183,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1.2rem,2vw,2rem)]">BACKEND</h2>
+                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">BACKEND</h2>
                             <div className="w-full text-[clamp(0.8rem,1vw,1rem)] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">TypeScript</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Node.js</p>
@@ -194,7 +194,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1.2rem,2vw,2rem)]">TOOLS</h2>
+                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">TOOLS</h2>
                             <div className="w-full text-[clamp(0.8rem,1vw,1rem)] flex flex-wrap gap-2">
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">Windows</p>
                                 <p className="w-fit h-fit p-1 px-5 m-1 border border-white rounded-full">VSCode</p>
@@ -209,13 +209,13 @@ export default function Home() {
                     <div className="ml-auto flex flex-col items-end justify-center gap-4 mt-[15vh]">
                         <NavLink
                             to="/Works"
-                            className="flex flex-row items-center justify-center gap-2 text-[clamp(1.2rem,2vw,2rem)] font-light"
+                            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light"
                             onMouseEnter={() => set("hover")}
                             onMouseLeave={() => set("default")}
                         >
                             <span>WORKS</span>
                             <span>
-                                <svg width="clamp(1.2rem,2vw,2rem)" height="clamp(1.2rem,2vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="clamp(1rem,1.5vw,2rem)" height="clamp(1rem,1.5vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
                                     <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
                                     <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
@@ -224,13 +224,13 @@ export default function Home() {
                         </NavLink>
                         <NavLink
                             to="/Gallery"
-                            className="flex flex-row items-center justify-center gap-2 text-[clamp(1.2rem,2vw,2rem)] font-light"
+                            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light"
                             onMouseEnter={() => set("hover")}
                             onMouseLeave={() => set("default")}
                         >
                             <span>GALLERY</span>
                             <span>
-                                <svg width="clamp(1.2rem,2vw,2rem)" height="clamp(1.2rem,2vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="clamp(1rem,1.5vw,2rem)" height="clamp(1rem,1.5vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
                                     <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
                                     <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
