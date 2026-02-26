@@ -16,11 +16,11 @@ export default function Works() {
 
     return(
         <motion.main
-            className="relative w-full min-h-screen flex flex-row justify-start items-start pt-[40vh] pb-[30vh] pl-[15vw]"
+            className="relative w-screen h-full overflow-x-auto lg:w-full lg:min-h-screen flex justify-start items-center pt-[15vh] pl-[15vw] pr-[15vw] lg:justify-start lg:items-start lg:pt-[40vh] lg:pb-[30vh] lg:pl-[15vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <div className="w-[40vw] flex flex-col gap-[40vh]">
+            <div className="hidden lg:flex lg:flex-col lg:w-[40vw] lg:h-auto lg:gap-[40vh]">
                 <Link key="1" to="/Works/1">
                     <motion.img
                         initial={{ opacity: 0, filter: "blur(3px)" }}
@@ -77,21 +77,106 @@ export default function Works() {
                 </a>
             </div>
 
+            <div className="lg:hidden flex flex-row overflow-x-auto flex-shrink-0 h-[70vh] gap-[40vw]">
+                <motion.div
+                    className="h-[70vh] flex items-end pb-5"
+                    onViewportEnter={() => setFocus(works[0])}
+                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                >
+                    <Link key="1" to="/Works/1">
+                        <motion.img
+                            initial={{ opacity: 0, filter: "blur(3px)" }}
+                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            src="/sms.gif"
+                            alt="Strudel Music Sequencer"
+                            className="w-[70vw]"
+                            onMouseEnter={() => set("View")}
+                            onMouseLeave={() => set("default")}
+                        />
+                    </Link>
+                </motion.div>
+                
+                <motion.div
+                    className="h-[70vh] flex items-end pb-5"
+                    onViewportEnter={() => setFocus(works[1])}
+                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                >
+                    <Link key="2" to="/Works/2">
+                        <motion.img
+                            src="/ms.gif"
+                            alt="Menu Scanner"
+                            className="w-[70vw]"
+                            onMouseEnter={() => set("View")}
+                            onMouseLeave={() => set("default")}
+                        />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    className="h-[70vh] flex items-end pb-5"
+                    onViewportEnter={() => setFocus(works[2])}
+                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                >
+                    <Link key="3" to="/Works/3">
+                        <motion.img
+                            src="/portfolio1.gif"
+                            alt="Portfolio 1"
+                            className="w-[70vw]"
+                            onMouseEnter={() => set("View")}
+                            onMouseLeave={() => set("default")}
+                        />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    className="h-[70vh] flex items-end"
+                    onViewportEnter={() => setFocus(works[3])}
+                    viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                >
+                    <a
+                        href="https://openprocessing.org/sketch/2655027"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <motion.img
+                            src="/flower.jpg"
+                            alt="Polygon Flower"
+                            className="w-[70vw]"
+                            onMouseEnter={() => set("View")}
+                            onMouseLeave={() => set("default")}
+                        />
+                    </a>
+                </motion.div>
+            </div>
+
             <motion.div
-                className="fixed top-[15vh] left-[60vw] w-[35vw] flex flex-col"
+                className="fixed top-[5vh] left-[10vw] w-[80vw] lg:top-[15vh] lg:left-[60vw] lg:w-[35vw] flex flex-col"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light pb-1">
-                    <h1>WORKS</h1>
+                <div className="w-[80vw] lg:w-[35vw] h-[15vh] flex flex-row items-end justify-between">
+                    <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">WORKS</h1>
+                    <a
+                        className="flex items-end justify-center text-[clamp(0.8rem,1vw,1.5rem)] font-light mb-1"
+                        href="https://github.com/kento9941"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onMouseEnter={() => set("hover")}
+                        onMouseLeave={() => set("default")}
+                    >
+                        /kent9941
+                    </a>
                 </div>
 
-                <div className="mt-[15vh]">
+                <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]" />
+
+                <div className="mt-[5vh] lg:mt-[15vh]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={focus.id}
-                            className="flex flex-col w-[35vw] text-zinc-300 whitespace-normal"
+                            className="flex flex-col w-[80vw] lg:w-[35vw] whitespace-normal"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -105,13 +190,6 @@ export default function Works() {
                     </AnimatePresence>
                 </div>
             </motion.div>
-
-            <motion.div
-                className="fixed top-[30vh] left-[60vw] w-[35vw] h-[1px] bg-[#888888aa]"
-                initial={{ opacity: 0, filter: "blur(3px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-            />
         </motion.main>
     )
 }
