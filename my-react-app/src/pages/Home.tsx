@@ -18,7 +18,7 @@ export default function Home() {
                 initial={{ opacity: 0, filter: "blur(1px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
                 <div className="w-[80vw] lg:w-[35vw] lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-between font-light leading-none">
                     <div>

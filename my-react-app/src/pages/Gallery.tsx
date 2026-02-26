@@ -8,8 +8,8 @@ export default function Gallery() {
             className="relative w-screen flex flex-col items-center pt-[5vh] pb-[10vh] lg:pt-[15vh] lg:pb-[20vh] lg:pl-[10vw]"
             initial={{ opacity: 0, filter: "blur(3px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, filter: "blur(3px)" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            exit={{ opacity: 0, filter: "blur(3px)", transition: { duration: 0.8, ease: "easeOut" } }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
             <div className="w-[80vw] lg:w-[70vw] h-[15vh] flex flex-row items-end justify-between">
                 <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">Origami Gallery</h1>

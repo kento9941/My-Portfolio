@@ -21,8 +21,7 @@ export default function WorkDetail() {
                     className="fixed top-[10vh] left-[5vw] lg:top-[5vh] lg:left-[15vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1 z-10"
                     initial={{ opacity: 0, filter: "blur(3px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, filter: "blur(3px)" }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     onMouseEnter={() => set("hover")}
                     onMouseLeave={() => set("default")}
                 >
@@ -40,7 +39,6 @@ export default function WorkDetail() {
                 className="lg:hidden fixed top-[10vh] right-[5vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-col items-end justify-start gap-1 z-10"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(3px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}
@@ -92,7 +90,6 @@ export default function WorkDetail() {
                 className="fixed top-[5vh] left-[10vw] lg:top-[15vh] lg:left-[15vw] w-[80vw] flex flex-row items-end justify-between"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(3px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light md:font-thin">
@@ -148,7 +145,6 @@ export default function WorkDetail() {
                 className="fixed top-[20vh] left-[10vw] lg:top-[30vh] lg:left-[15vw] w-[80vw] h-[1px] bg-[#888888aa]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(3px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             />
 
@@ -156,7 +152,6 @@ export default function WorkDetail() {
                 className="flex flex-col min-h-[200vh] md:min-h-[200vh] lg:min-h-[370vh] w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="w-full flex flex-col items-center justify-start gap-[10vh] md:pb-[30vh] lg:pb-[40vh]">

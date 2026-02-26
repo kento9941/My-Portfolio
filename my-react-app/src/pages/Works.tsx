@@ -18,7 +18,7 @@ export default function Works() {
         <motion.main
             className="relative w-screen h-full overflow-x-auto lg:w-full lg:min-h-screen flex justify-start items-center pt-[15vh] pl-[15vw] pr-[15vw] lg:justify-start lg:items-start lg:pt-[40vh] lg:pb-[30vh] lg:pl-[15vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="hidden lg:flex lg:flex-col lg:w-[40vw] lg:h-auto lg:gap-[40vh]">
                 <Link key="1" to="/Works/1">
