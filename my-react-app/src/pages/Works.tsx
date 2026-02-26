@@ -26,6 +26,7 @@ export default function Works() {
                         initial={{ opacity: 0, filter: "blur(3px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
+                        loading="eager"
                         src="/sms.gif"
                         alt="Strudel Music Sequencer"
                         className="w-[40vw]"
@@ -50,6 +51,7 @@ export default function Works() {
 
                 <Link key="3" to="/Works/3">
                     <motion.img
+                        loading="lazy"
                         src="/portfolio1.gif"
                         alt="Portfolio 1"
                         className="w-[40vw]"
@@ -66,7 +68,8 @@ export default function Works() {
                     rel="noopener noreferrer"
                 >
                     <motion.img
-                        src="/flower.jpg"
+                        loading="lazy"
+                        src="/flower.webp"
                         alt="Polygon Flower"
                         className="w-[40vw]"
                         onViewportEnter={() => setFocus(works[3])}

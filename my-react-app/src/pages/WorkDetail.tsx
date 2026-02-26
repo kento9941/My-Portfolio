@@ -162,10 +162,12 @@ export default function WorkDetail() {
                 <div className="w-full flex flex-col items-center justify-start gap-[10vh] md:pb-[30vh] lg:pb-[40vh]">
                     <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
+                            loading="eager"
                             src={data?.bg1}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
+                            loading="eager"
                             src={data?.image1}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
@@ -174,10 +176,12 @@ export default function WorkDetail() {
 
                     <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
+                            loading="eager"
                             src={data?.bg2}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
+                            loading="eager"
                             src={data?.image2}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
@@ -198,10 +202,12 @@ export default function WorkDetail() {
 
                     <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:max-h-[30vh] lg:max-h-full aspect-video flex items-center justify-center">
                         <img
+                            loading="lazy"
                             src={data?.bg4}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
+                            loading="lazy"
                             src={data?.image4}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
