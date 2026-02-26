@@ -7,7 +7,7 @@ export default function Navigation() {
     return (
         <>
             <motion.div
-                className="lg:hidden pt-3 ml-[5vw] mr-[5vw] pl-[1vw] pr-[1vw] w-[90vw] h-[clamp(3rem,6vh,4rem)] flex flex-row items-center justify-between border-white/50 border-b-[0.5px] bg-black"
+                className="lg:hidden pt-3 ml-[5vw] mr-[5vw] pl-[1vw] pr-[1vw] w-[90vw] h-[clamp(3rem,6vh,4rem)] flex flex-row items-center justify-between border-[#888888aa] border-b-[0.5px] bg-[#111111]"
                 initial={{ opacity: 0, filter: "blur(5px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}

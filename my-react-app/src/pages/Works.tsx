@@ -83,7 +83,7 @@ export default function Works() {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[clamp(2rem,4vw,4rem)] font-thin">
+                <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light pb-1">
                     <h1>WORKS</h1>
                 </div>
 
@@ -91,7 +91,7 @@ export default function Works() {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={focus.id}
-                            className="flex flex-col w-[35vw] whitespace-normal"
+                            className="flex flex-col w-[35vw] text-zinc-300 whitespace-normal"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -107,7 +107,7 @@ export default function Works() {
             </motion.div>
 
             <motion.div
-                className="fixed top-[30vh] left-[60vw] w-[35vw] h-[0.5px] bg-white"
+                className="fixed top-[30vh] left-[60vw] w-[35vw] h-[1px] bg-[#888888aa]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}

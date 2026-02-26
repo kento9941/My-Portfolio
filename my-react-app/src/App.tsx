@@ -16,7 +16,7 @@ export default function App() {
     <div className="relative w-full h-screen select-none">
       {/* splash page */}
       <motion.div
-        className="fixed inset-0 bg-black flex items-center justify-center text-[2rem] font-light z-[9999]"
+        className="fixed inset-0 bg-[#101010] flex items-center justify-center text-[2rem] font-light z-[9999]"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0, transitionEnd: { display: "none" } }}
         transition={{ duration: 0.8, ease: "easeInOut", delay: 2 }}
@@ -38,14 +38,20 @@ export default function App() {
       </motion.div>
 
       {/* mouse effect background */}
-      <div className="fixed inset-0 -z-10 bg-black w-screen h-screen">
+      <div className="hidden [@media(pointer:fine)]:block fixed inset-0 -z-50 bg-black w-screen h-screen">
         <MouseEffectScene />
       </div>
+
+      {/* overlay */}
+      <div className="fixed inset-0 -z-10 bg-[#ffffff11]" />
+      {/* <div className="fixed inset-0 -z-10 bg-[#ffffffdd] mix-blend-difference" /> */}
 
       <BrowserRouter>
         <ScrollProgress />
         <ScrollReset />
-        <Cursor />
+        <div className="hidden [@media(pointer:fine)]:block">
+          <Cursor />
+        </div>
 
         <header>
           {/* navigation */}

@@ -12,21 +12,20 @@ export default function Gallery() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <div className="w-[80vw] lg:w-[70vw] h-[15vh] flex flex-row items-end justify-between">
-                <h1 className="text-[clamp(1.5rem,4vw,4rem)] font-light lg:font-thin">Origami Gallery</h1>
+                <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">Origami Gallery</h1>
                 <a
-                    className="flex flex-row items-end justify-center text-[clamp(0.8rem,1.5vw,1.5rem)] font-light mb-1"
+                    className="flex items-end justify-center text-[clamp(0.8rem,1vw,1.5rem)] font-light mb-1"
                     href="https://www.instagram.com/kent_origami/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onMouseEnter={() => set("hover")}
                     onMouseLeave={() => set("default")}
                 >
-                    <i className="fa-brands fa-instagram fa-2x pe-[0.5rem]" aria-hidden="true" />
-                    <span className="hidden md:block">@kent_origami</span>
+                    @kent_origami
                 </a>
             </div>
 
-            <div className="w-[80vw] lg:w-[70vw] h-[0.5px] bg-white"/>
+            <div className="w-[80vw] lg:w-[70vw] h-[1px] bg-[#888888aa]"/>
 
             <div className="hidden md:flex md:flex-row md:pt-[clamp(1rem,7.5vh,3rem)] md:gap-[10vw]">
                 <div className="w-[30vw] flex flex-col gap-10">
