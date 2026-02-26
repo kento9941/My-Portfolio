@@ -18,7 +18,7 @@ export default function Works() {
         <motion.main
             className="relative w-screen h-full overflow-x-auto lg:w-full lg:min-h-screen flex justify-start items-center pt-[15vh] pl-[15vw] pr-[15vw] lg:justify-start lg:items-start lg:pt-[40vh] lg:pb-[30vh] lg:pl-[15vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
         >
             <div className="hidden lg:flex lg:flex-col lg:w-[40vw] lg:h-auto lg:gap-[40vh]">
                 <Link key="1" to="/Works/1">
@@ -87,7 +87,7 @@ export default function Works() {
                         <motion.img
                             initial={{ opacity: 0, filter: "blur(3px)" }}
                             animate={{ opacity: 1, filter: "blur(0px)" }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            transition={{ duration: 1.2, ease: "easeOut" }}
                             src="/sms.gif"
                             alt="Strudel Music Sequencer"
                             className="w-[70vw]"
@@ -154,7 +154,7 @@ export default function Works() {
                 className="fixed top-[5vh] left-[10vw] w-[80vw] lg:top-[15vh] lg:left-[60vw] lg:w-[35vw] flex flex-col"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="w-[80vw] lg:w-[35vw] h-[15vh] flex flex-row items-end justify-between">
                     <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">WORKS</h1>

@@ -22,7 +22,7 @@ export default function WorkDetail() {
                     initial={{ opacity: 0, filter: "blur(3px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, filter: "blur(3px)" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
                     onMouseEnter={() => set("hover")}
                     onMouseLeave={() => set("default")}
                 >
@@ -41,7 +41,7 @@ export default function WorkDetail() {
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(3px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
                 onMouseEnter={() => set("hover")}
                 onMouseLeave={() => set("default")}
             >
@@ -93,7 +93,7 @@ export default function WorkDetail() {
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(3px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light md:font-thin">
                     <h1>{data?.title}</h1>
@@ -149,7 +149,7 @@ export default function WorkDetail() {
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(3px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
             />
 
             <motion.div
@@ -157,7 +157,7 @@ export default function WorkDetail() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="w-full flex flex-col items-center justify-start gap-[10vh] md:pb-[30vh] lg:pb-[40vh]">
                     <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
