@@ -211,7 +211,7 @@ export default function Works() {
                         onMouseEnter={() => set("hover")}
                         onMouseLeave={() => set("default")}
                     >
-                        /kent9941
+                        /kento9941
                     </a>
                 </div>
 

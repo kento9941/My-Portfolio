@@ -20,8 +20,8 @@ export default function MouseEffectScene() {
 
 function Smoke() {
     const ref          = useRef<any>(null);
-    const prevMouse    = useRef<[number, number]>([0, 0]);
-    const currentMouse = useRef<[number, number]>([0, 0]);
+    const prevMouse    = useRef<[number, number]>([2, 2]);
+    const currentMouse = useRef<[number, number]>([2, 2]);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {

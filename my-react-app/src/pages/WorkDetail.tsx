@@ -20,7 +20,7 @@ export default function WorkDetail() {
         >
             <NavLink to="/Works">
                 <motion.div
-                    className="sm:landscape:hidden md:landscape:hidden fixed top-[10vh] left-[5vw] lg:top-[5vh] lg:left-[15vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1 z-10"
+                    className="sm:landscape:hidden md:landscape:hidden lg:landscape:flex fixed top-[10vh] left-[5vw] lg:top-[5vh] lg:left-[15vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1 z-10"
                     initial={{ opacity: 0, filter: "blur(3px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -89,72 +89,69 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="fixed top-[5vh] left-[10vw] landscape:top-[10vh] lg:top-[15vh] lg:left-[15vw] w-[80vw] flex flex-row items-end justify-between"
+                className="fixed top-[5vh] left-[10vw] landscape:top-[10vh] lg:top-[15vh] lg:left-[15vw] w-[80vw] flex flex-col"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light">
-                    <h1>{data?.title}</h1>
-                </div>
-                
-                <div
-                    className={`hidden lg:flex lg:flex-row lg:items-end lg:gap-[1rem] lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-light lg:mb-[clamp(0.2rem,1.2vh,0.8rem)]
-                        landscape:flex landscape:flex-row landscape:items-end landscape:gap-[1rem] landscape:text-[clamp(0.8rem,1.2vw,1.2rem)] landscape:font-light
-                    `}>
-                    {data?.github &&
-                    (
-                        <a
-                            href={data?.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1"
-                            onMouseEnter={() => set("hover")}
-                            onMouseLeave={() => set("default")}
-                        >
-                            GitHub
-                            <span>
-                                <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                </svg>
-                            </span>
-                        </a>
-                    )}
+                <div className="flex flex-row items-end justify-between">
+                    <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light">
+                        <h1>{data?.title}</h1>
+                    </div>
+                    
+                    <div
+                        className={`hidden lg:flex lg:flex-row lg:items-end lg:gap-[1rem] lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-light lg:mb-[clamp(0.2rem,1.2vh,0.8rem)]
+                            landscape:flex landscape:flex-row landscape:items-end landscape:gap-[1rem] landscape:text-[clamp(0.8rem,1.2vw,1.2rem)] landscape:font-light
+                        `}>
+                        {data?.github &&
+                        (
+                            <a
+                                href={data?.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1"
+                                onMouseEnter={() => set("hover")}
+                                onMouseLeave={() => set("default")}
+                            >
+                                GitHub
+                                <span>
+                                    <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                        <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                        <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        )}
 
-                    {data?.demo &&
-                    (
-                        <a
-                            href={data?.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1"
-                            onMouseEnter={() => set("hover")}
-                            onMouseLeave={() => set("default")}
-                        >
-                            Demo
-                            <span>
-                                <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
-                                </svg>
-                            </span>
-                        </a>
-                    )}
+                        {data?.demo &&
+                        (
+                            <a
+                                href={data?.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1"
+                                onMouseEnter={() => set("hover")}
+                                onMouseLeave={() => set("default")}
+                            >
+                                Demo
+                                <span>
+                                    <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                        <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                        <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        )}
+                    </div>
                 </div>
+
+                <div className="w-[80vw] h-[1px] bg-[#888888aa]" />
             </motion.div>
 
             <motion.div
-                className="fixed top-[20vh] left-[10vw] landscape:top-[25vh] lg:top-[30vh] lg:left-[15vw] w-[80vw] h-[1px] bg-[#888888aa]"
-                initial={{ opacity: 0, filter: "blur(3px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-            />
-
-            <motion.div
-                className="flex flex-col min-h-[200vh] landscape:min-h-[350vh] md:min-h-[200vh] lg:portrait:min-h-[180vh] lg:min-h-[clamp(20rem,370vh,30rem)] w-full"
+                className="flex flex-col min-h-[clamp(80rem,200vh,200rem)] landscape:min-h-[350vh] md:min-h-[200vh] lg:portrait:min-h-[180vh] lg:landscape:min-h-[clamp(20rem,370vh,30rem)] w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}

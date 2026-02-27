@@ -52,7 +52,7 @@ function NavButton({title, link}: Props) {
         <NavLink to={link}>
             {({isActive}) => (
             <div
-                className={`group lg:w-[clamp(3.5rem,7vw,10rem)] relative text-[clamp(0.3rem,1vw,1.5rem)] tracking-widest font-light
+                className={`group lg:w-[clamp(3.5rem,7vw,10rem)] relative text-[clamp(0.4rem,2vw,1.5rem)] md:text-[clamp(0.8rem,1vw,1.5rem)] tracking-widest font-light
                     ${isActive ?
                     (theme === "dark" ? "text-white" : "text-[#101010cc] font-medium")
                     :
