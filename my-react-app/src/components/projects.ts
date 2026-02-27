@@ -13,9 +13,9 @@ export const projects = [
         image3: "/sms3.gif",
         image4: "/sms4.webp",
         bg1: "/black-bg.webp",
-        bg2: "/grey-bg.webp",
-        bg3: "/black-bg.webp",
-        bg4: "/cloth-bg.webp",
+        bg2: undefined,
+        bg3: "/cloth-bg.webp",
+        bg4: "/grey-bg.webp",
         next: "2",
     },
     {
@@ -31,10 +31,10 @@ export const projects = [
         image2: "/ms2.gif",
         image3: "/ms3.webp",
         image4: "/ms4.gif",
-        bg1: "/cloth-bg.webp",
-        bg2: "/flower-bg.webp",
+        bg1: "/flower-bg.webp",
+        bg2: undefined,
         bg3: "/beige-bg.webp",
-        bg4: "/beige-bg.webp",
+        bg4: "/plant-bg.webp",
         next: "3"
     },
     {
@@ -51,7 +51,7 @@ export const projects = [
         image3: "/portfolio3.gif",
         image4: "/portfolio4.gif",
         bg1: "/plant-bg.webp",
-        bg2: "/beige-bg.webp",
+        bg2: undefined,
         bg3: "/office-bg.webp",
         bg4: "/cloth-bg.webp",
         next: "1"

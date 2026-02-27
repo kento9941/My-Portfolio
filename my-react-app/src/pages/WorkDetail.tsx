@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useParams, NavLink, Link } from "react-router-dom";
 import { projects } from "../components/projects";
 import { useCursorStore } from "../store/useCursorStore";
+import { useThemeStore } from "../store/useThemeStore";
 
 export default function WorkDetail() {
     const { id } = useParams();
@@ -9,6 +10,7 @@ export default function WorkDetail() {
     const nextData = projects.find((p) => p.id === data?.next)
 
     const set = useCursorStore((state) => state.setCursorType);
+    const { theme } = useThemeStore();
 
     return (
         <motion.main
@@ -27,8 +29,8 @@ export default function WorkDetail() {
                 >
                     <span>
                         <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 37 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="0.646447" y1="36.0018" x2="36.0018" y2="0.646455" stroke="white" strokeWidth="4" />
-                            <line x1="0.353553" y1="35.6464" x2="35.7089" y2="71.0018" stroke="white" strokeWidth="4" />
+                            <line x1="0.646447" y1="36.0018" x2="36.0018" y2="0.646455" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4" />
+                            <line x1="0.353553" y1="35.6464" x2="35.7089" y2="71.0018" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4" />
                         </svg>
                     </span>
                     <span>BACK</span>
@@ -56,9 +58,9 @@ export default function WorkDetail() {
                         GitHub
                         <span>
                             <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
-                                <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
-                                <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
+                                <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                             </svg>
                         </span>
                     </a>
@@ -77,9 +79,9 @@ export default function WorkDetail() {
                         Demo
                         <span>
                             <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
-                                <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
-                                <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
+                                <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                             </svg>
                         </span>
                     </a>
@@ -110,9 +112,9 @@ export default function WorkDetail() {
                             GitHub
                             <span>
                                 <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
+                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                                 </svg>
                             </span>
                         </a>
@@ -131,9 +133,9 @@ export default function WorkDetail() {
                             Demo
                             <span>
                                 <svg width="clamp(0.6rem,1vw,1.5rem)" height="clamp(0.6rem,1vw,1.5rem)" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke="white" strokeWidth="4"/>
-                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke="white" strokeWidth="4"/>
-                                    <line x1="71.207" y1="50" x2="71.207" stroke="white" strokeWidth="4"/>
+                                    <line x1="0.353478" y1="71.3571" x2="71.0642" y2="0.646433" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="21.707" y1="0.5" x2="71.707" y2="0.5" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="71.207" y1="50" x2="71.207" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                                 </svg>
                             </span>
                         </a>
@@ -169,12 +171,14 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
-                        <img
-                            loading="eager"
-                            src={data?.bg2}
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
+                    <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center bg-[#aaaaaa]">
+                        {data?.bg2 && (
+                            <img
+                                loading="eager"
+                                src={data?.bg2}
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
+                        )}
                         <img
                             loading="eager"
                             src={data?.image2}
@@ -195,12 +199,14 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:max-h-[30vh] lg:max-h-full aspect-video flex items-center justify-center">
-                        <img
-                            loading="lazy"
-                            src={data?.bg4}
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
+                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:max-h-[30vh] lg:max-h-full aspect-video flex items-center justify-center bg-[#aaaaaa]">
+                        {data?.bg4 && (
+                            <img
+                                loading="lazy"
+                                src={data?.bg4}
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
+                        )}
                         <img
                             loading="lazy"
                             src={data?.image4}
@@ -216,7 +222,7 @@ export default function WorkDetail() {
                             <h2 className="text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.1rem,2vw,2rem)]">TOOLS</h2>
                             <div className="w-full text-[clamp(0.7rem,1vw,1rem)] flex flex-wrap gap-2">
                                 {data?.techs.map((val) => (
-                                    <p className="w-fit h-fit p-1 px-5 border border-[#888888aa] rounded-full">{val}</p>
+                                    <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>{val}</p>
                                 ))}
                             </div>
                         </div>
@@ -248,9 +254,9 @@ export default function WorkDetail() {
                             <span>{nextData?.title}</span>
                             <span>
                                 <svg width="clamp(1.2rem,2vw,2rem)" height="clamp(1.2rem,2vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                                 </svg>
                             </span>
                         </Link>

@@ -2,7 +2,7 @@
 
 import { useFrame, Canvas } from "@react-three/fiber";
 import { useFBO } from "@react-three/drei";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
 export default function MouseEffectScene() {
@@ -33,6 +33,15 @@ function Smoke() {
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
+
+    const uniforms = useMemo(() => ({
+        uTime: { value: 0 },
+        uResolution: { value: new THREE.Vector2() },
+        uCurrentMouse: { value: new THREE.Vector2() },
+        uPrevMouse: { value: new THREE.Vector2() },
+        uPrevVelocity: { value: null },
+        uPrevDensity: { value: null },
+    }), []);
 
     // [0] for velocity, [1] for density
     const targets = [
@@ -82,14 +91,7 @@ function Smoke() {
             <shaderMaterial
                 ref={ref}
                 glslVersion={THREE.GLSL3}
-                uniforms={{
-                    uTime: { value: 0 },
-                    uResolution: { value: new THREE.Vector2() },
-                    uCurrentMouse: { value: new THREE.Vector2() },
-                    uPrevMouse: { value: new THREE.Vector2() },
-                    uPrevVelocity: { value: null },
-                    uPrevDensity: { value: null },
-                }}
+                uniforms={uniforms}
                 transparent
                 vertexShader={vertexShader}
                 fragmentShader={fragmentShader}

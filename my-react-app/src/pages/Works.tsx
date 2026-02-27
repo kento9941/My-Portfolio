@@ -16,118 +16,156 @@ export default function Works() {
 
     return(
         <motion.main
-            className="relative w-screen h-full overflow-x-auto lg:w-full lg:min-h-screen flex justify-start items-center pt-[15vh] pl-[15vw] pr-[15vw] lg:justify-start lg:items-start lg:pt-[40vh] lg:pb-[30vh] lg:pl-[15vw]"
+            className="relative w-screen h-full overflow-x-auto landscape:w-full landscape:min-h-screen flex justify-start items-center pt-[15vh] pl-[15vw] pr-[15vw] landscape:justify-start landscape:items-start landscape:pt-[40vh] landscape:pb-[30vh] landscape:pl-[15vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <div className="hidden lg:flex lg:flex-col lg:w-[40vw] lg:h-auto lg:gap-[40vh]">
-                <Link key="1" to="/Works/1">
-                    <motion.img
-                        initial={{ opacity: 0, filter: "blur(3px)" }}
-                        animate={{ opacity: 1, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        loading="eager"
-                        src="/sms.gif"
-                        alt="Strudel Music Sequencer"
-                        className="w-[40vw]"
-                        onViewportEnter={() => setFocus(works[0])}
-                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+            <div className="hidden landscape:flex landscape:flex-col landscape:w-[40vw] landscape:h-auto landscape:gap-[40vh]">
+                <motion.div
+                    initial={{ opacity: 0, filter: "blur(3px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <Link
+                        key="1"
+                        to="/Works/1"
+                        className="relative w-[40vw] aspect-[2/1] flex items-center justify-center"
                         onMouseEnter={() => set("View")}
                         onMouseLeave={() => set("default")}
-                    />
-                </Link>
+                    >
+                        <motion.img
+                            src="black-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                            onViewportEnter={() => setFocus(works[0])}
+                            viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                        />
+                        <motion.img
+                            loading="eager"
+                            src="/sms.gif"
+                            alt="Strudel Music Sequencer"
+                            className="w-[35vw] z-10"
+                        />
+                    </Link>
+                </motion.div>
                 
-                <Link key="2" to="/Works/2">
+                <Link
+                    key="2"
+                    to="/Works/2"
+                    className="relative w-[40vw] aspect-[2/1] flex items-center justify-center"
+                    onMouseEnter={() => set("View")}
+                    onMouseLeave={() => set("default")}
+                >
                     <motion.img
-                        src="/ms.gif"
-                        alt="Menu Scanner"
-                        className="w-[40vw]"
+                        src="beige-bg.webp"
+                        className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[1])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
-                        onMouseEnter={() => set("View")}
-                        onMouseLeave={() => set("default")}
+                    />
+                    <img
+                        src="/ms.gif"
+                        alt="Menu Scanner"
+                        className="w-[35vw] z-10"
                     />
                 </Link>
 
-                <Link key="3" to="/Works/3">
+                <Link
+                    key="3"
+                    to="/Works/3"
+                    className="relative w-[40vw] aspect-[2/1] flex items-center justify-center"
+                    onMouseEnter={() => set("View")}
+                    onMouseLeave={() => set("default")}
+                >
                     <motion.img
+                        src="plant-bg.webp"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        onViewportEnter={() => setFocus(works[2])}
+                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                    />
+                    <img
                         loading="lazy"
                         src="/portfolio1.gif"
                         alt="Portfolio 1"
-                        className="w-[40vw]"
-                        onViewportEnter={() => setFocus(works[2])}
-                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
-                        onMouseEnter={() => set("View")}
-                        onMouseLeave={() => set("default")}
+                        className="w-[35vw] z-10 select-none"
                     />
                 </Link>
 
-                <a
+                <motion.a
                     href="https://openprocessing.org/sketch/2655027"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="relative w-[40vw] aspect-[2/1] flex items-center justify-center"
+                    onMouseEnter={() => set("View")}
+                    onMouseLeave={() => set("default")}
                 >
                     <motion.img
+                        src="flower-bg.webp"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        onViewportEnter={() => setFocus(works[3])}
+                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                    />
+                    <img
                         loading="lazy"
                         src="/flower.webp"
                         alt="Polygon Flower"
-                        className="w-[40vw]"
-                        onViewportEnter={() => setFocus(works[3])}
-                        viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
-                        onMouseEnter={() => set("View")}
-                        onMouseLeave={() => set("default")}
+                        className="w-[32vw] z-10"
                     />
-                </a>
+                </motion.a>
             </div>
 
-            <div className="lg:hidden flex flex-row overflow-x-auto flex-shrink-0 h-[70vh] gap-[40vw]">
+            <div className="landscape:hidden flex flex-row overflow-x-auto flex-shrink-0 h-[70vh] gap-[40vw]">
                 <motion.div
-                    className="h-[70vh] flex items-end pb-5"
+                    className="h-[70vh] flex items-end"
                     onViewportEnter={() => setFocus(works[0])}
                     viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
+                    initial={{ opacity: 0, filter: "blur(3px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                    <Link key="1" to="/Works/1">
-                        <motion.img
-                            initial={{ opacity: 0, filter: "blur(3px)" }}
-                            animate={{ opacity: 1, filter: "blur(0px)" }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
+                    <Link key="1" to="/Works/1" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
+                        <img
+                            src="black-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <img
                             src="/sms.gif"
                             alt="Strudel Music Sequencer"
-                            className="w-[70vw]"
-                            onMouseEnter={() => set("View")}
-                            onMouseLeave={() => set("default")}
+                            className="w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
                 
                 <motion.div
-                    className="h-[70vh] flex items-end pb-5"
+                    className="h-[70vh] flex items-end"
                     onViewportEnter={() => setFocus(works[1])}
                     viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                 >
-                    <Link key="2" to="/Works/2">
-                        <motion.img
+                    <Link key="2" to="/Works/2" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
+                        <img
+                            src="beige-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <img
                             src="/ms.gif"
                             alt="Menu Scanner"
-                            className="w-[70vw]"
-                            onMouseEnter={() => set("View")}
-                            onMouseLeave={() => set("default")}
+                            className="w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
 
                 <motion.div
-                    className="h-[70vh] flex items-end pb-5"
+                    className="h-[70vh] flex items-end"
                     onViewportEnter={() => setFocus(works[2])}
                     viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                 >
-                    <Link key="3" to="/Works/3">
-                        <motion.img
+                    <Link key="3" to="/Works/3" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
+                        <img
+                            src="plant-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <img
                             src="/portfolio1.gif"
                             alt="Portfolio 1"
-                            className="w-[70vw]"
-                            onMouseEnter={() => set("View")}
-                            onMouseLeave={() => set("default")}
+                            className="w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
@@ -141,25 +179,29 @@ export default function Works() {
                         href="https://openprocessing.org/sketch/2655027"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="relative w-[70vw] aspect-[2/1] flex items-center justify-center"
                     >
-                        <motion.img
-                            src="/flower.jpg"
+                        <img
+                            src="flower-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <img
+                            loading="lazy"
+                            src="/flower.webp"
                             alt="Polygon Flower"
-                            className="w-[70vw]"
-                            onMouseEnter={() => set("View")}
-                            onMouseLeave={() => set("default")}
+                            className="w-[55vw] z-10"
                         />
                     </a>
                 </motion.div>
             </div>
 
             <motion.div
-                className="fixed top-[5vh] left-[10vw] w-[80vw] lg:top-[15vh] lg:left-[60vw] lg:w-[35vw] flex flex-col"
+                className="fixed top-[5vh] left-[10vw] w-[80vw] landscape:top-[15vh] landscape:left-[60vw] landscape:w-[35vw] flex flex-col"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                <div className="w-[80vw] lg:w-[35vw] h-[15vh] flex flex-row items-end justify-between">
+                <div className="w-[80vw] landscape:w-[35vw] h-[15vh] flex flex-row items-end justify-between">
                     <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">WORKS</h1>
                     <a
                         className="flex items-end justify-center text-[clamp(0.8rem,1vw,1.5rem)] font-light mb-1"
@@ -173,13 +215,13 @@ export default function Works() {
                     </a>
                 </div>
 
-                <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]" />
+                <div className="w-[80vw] landscape:w-[35vw] h-[1px] bg-[#888888aa]" />
 
-                <div className="mt-[5vh] lg:mt-[15vh]">
+                <div className="mt-[5vh] landscape:mt-[15vh]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={focus.id}
-                            className="flex flex-col w-[80vw] lg:w-[35vw] whitespace-normal"
+                            className="flex flex-col w-[80vw] landscape:w-[35vw] whitespace-normal"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}

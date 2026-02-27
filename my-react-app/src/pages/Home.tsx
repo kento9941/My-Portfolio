@@ -3,9 +3,24 @@ import { useState } from "react";
 import { useCursorStore } from "../store/useCursorStore";
 import ParallaxImage from "../components/parallax-image";
 import { NavLink } from "react-router-dom";
+import { useThemeStore } from "../store/useThemeStore";
+
+const item = {
+    initial: { y: "2rem", opacity: 0 },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            ease: [0.2, 1, 0.4, 1] as const
+        }
+    },
+};
 
 export default function Home() {
     const set = useCursorStore((state) => state.setCursorType);
+    const { theme } = useThemeStore();
+
     return (
         <motion.main
             className="overflow-x-hidden pb-[10vh]"
@@ -23,10 +38,47 @@ export default function Home() {
                 <div className="w-[80vw] lg:w-[35vw] lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-between font-light leading-none">
                     <div>
                         <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-light lg:font-thin">
-                            <h1>KENTO</h1>
-                            <h1>KAWAZOE</h1>
+                            <div className="h-auto overflow-hidden">
+                                <motion.h1 
+                                    className="flex gap-[clamp(0.1rem,0.2vw,0.2rem)]"
+                                    initial="initial"
+                                    whileInView="animate"
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        staggerChildren: 0.08,
+                                        delayChildren: 0.7,
+                                    }}
+                                >
+                                    <motion.span variants={item}>K</motion.span>
+                                    <motion.span variants={item}>E</motion.span>
+                                    <motion.span variants={item}>N</motion.span>
+                                    <motion.span variants={item}>T</motion.span>
+                                    <motion.span variants={item}>O</motion.span>
+                                </motion.h1>
+                            </div>
+                            <div className="h-auto overflow-hidden">
+                                <motion.h1 
+                                    className="flex gap-[clamp(0.1rem,0.2vw,0.2rem)]"
+                                    initial="initial"
+                                    whileInView="animate"
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        staggerChildren: 0.08,
+                                        delayChildren: 1,
+                                    }}
+                                >
+                                    <motion.span variants={item}>K</motion.span>
+                                    <motion.span variants={item}>A</motion.span>
+                                    <motion.span variants={item}>W</motion.span>
+                                    <motion.span variants={item}>A</motion.span>
+                                    <motion.span variants={item}>Z</motion.span>
+                                    <motion.span variants={item}>O</motion.span>
+                                    <motion.span variants={item}>E</motion.span>
+                                </motion.h1>
+                            </div>
                         </div>
-                        <div className="text-zinc-300 text-[clamp(0.8rem,1.2vw,1.5rem)] pl-1 lg:pl-2">
+
+                        <div className="text-[clamp(0.8rem,1.2vw,1.5rem)] pl-1 lg:pl-2">
                             Web Developer / Designer
                         </div>
                     </div>
@@ -38,7 +90,9 @@ export default function Home() {
 
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-end">
                     <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <h1>ABOUT ME</h1>
+                        <div className="overflow-hidden">
+                            <h1>ABOUT ME</h1>
+                        </div>
                     </div>
 
                     <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]"/>
@@ -61,7 +115,9 @@ export default function Home() {
             >
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <h1>MOTIVATION</h1>
+                        <div className="h-auto overflow-hidden">
+                            <h1>MOTIVATION</h1>
+                        </div>
                     </div>
 
                     <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]"/>
@@ -91,44 +147,52 @@ export default function Home() {
 
                 <div className="w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <h1>SKILLS</h1>
+                        <div className="h-auto overflow-hidden">
+                            <h1>SKILLS</h1>
+                        </div>
                     </div>
 
                     <div className="w-[80vw] lg:w-[75vw] h-[1px] bg-[#888888aa]"/>
 
                     <div className="mt-[5vh] w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start gap-10 lg:flex-row lg:items-start lg:justify-between">
                         <div className="flex flex-col w-[80vw] lg:w-[25vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">FRONTEND</h2>
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                                <h2>FRONTEND</h2>
+                            </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">TypeScript</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">React.js</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Next.js</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Tailwind CSS</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Motion</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">React Three Fiber</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Zustand</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>TypeScript</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>React.js</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Next.js</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Tailwind CSS</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Motion</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>React Three Fiber</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Zustand</p>
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">BACKEND</h2>
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                                <h2>BACKEND</h2>
+                            </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">TypeScript</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Node.js</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Python</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Java</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">FastAPI</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">SQL</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>TypeScript</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Node.js</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Python</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Java</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>FastAPI</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>SQL</p>
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <h2 className="text-[clamp(1rem,1.5vw,2rem)]">TOOLS</h2>
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                                <h2>TOOLS</h2>
+                            </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Windows</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">VSCode</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Cursor</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Git</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Figma</p>
-                                <p className="w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full">Blender</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Windows</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>VSCode</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Cursor</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Git</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Figma</p>
+                                <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>Blender</p>
                             </div>
                         </div>
                     </div>
@@ -143,9 +207,9 @@ export default function Home() {
                             <span>WORKS</span>
                             <span>
                                 <svg width="clamp(1rem,1.5vw,2rem)" height="clamp(1rem,1.5vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                                 </svg>
                             </span>
                         </NavLink>
@@ -158,9 +222,9 @@ export default function Home() {
                             <span>GALLERY</span>
                             <span>
                                 <svg width="clamp(1rem,1.5vw,2rem)" height="clamp(1rem,1.5vw,2rem)" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke="white" strokeWidth="4"/>
-                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke="white" strokeWidth="4"/>
+                                    <line x1="0.204656" y1="50.2071" x2="100.205" y2="50.2071" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="15.2028" x2="100.763" y2="50.5581" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
+                                    <line x1="65.4073" y1="85.2064" x2="100.763" y2="49.851" stroke={`${theme === "dark" ? "white" : "#101010cc"}`} strokeWidth="4"/>
                                 </svg>
                             </span>
                         </NavLink>
@@ -174,6 +238,7 @@ export default function Home() {
 function Email() {
     const [copied, setCopied] = useState(false);
     const set = useCursorStore((state) => state.setCursorType);
+    const { theme } = useThemeStore();
 
     const copy = async () => {
         await navigator.clipboard.writeText("kento9941@gmail.com");
@@ -185,7 +250,7 @@ function Email() {
         <button onClick={copy} className="relative cursor-pointer font-light italic" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
             kento9941@gmail.com
             {copied && (
-                <span className="absolute bottom-[-1.5rem] right-0 text-[#ffffffaa] pointer-events-none">
+                <span className={`absolute bottom-[-1.5rem] right-0 pointer-events-none ${theme === "dark" ? "text-[#ffffffaa]" : "text-[#101010aa]"}`}>
                     Copied!
                 </span>
             )}

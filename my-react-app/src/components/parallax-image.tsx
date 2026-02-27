@@ -33,7 +33,7 @@ export default function ParallaxImage({ src, classname, hover="default" }: Props
         >
             <motion.img
                 src={src}
-                className="w-full object-cover"
+                className="w-full object-cover opacity-[80%]"
                 style={{ y }}
             />
         </div>
