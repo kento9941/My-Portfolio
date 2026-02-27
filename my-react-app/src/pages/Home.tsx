@@ -23,13 +23,13 @@ export default function Home() {
 
     return (
         <motion.main
-            className="overflow-x-hidden pb-[10vh]"
+            className="pb-[10vh]"
             exit={{ opacity: 0, filter: "blur(1px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* about */}
             <motion.section
-                className="relative w-screen pt-[15vh] pl-[10vw] flex flex-col lg:pl-[15vw] lg:flex-row lg:items-center lg:gap-[10vw]"
+                className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw] lg:flex-row lg:items-center lg:gap-[10vw]"
                 initial={{ opacity: 0, filter: "blur(1px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -89,7 +89,7 @@ export default function Home() {
                 </div>
 
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-end">
-                    <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
+                    <div className="h-[10vh] lg:h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
                         <div className="overflow-hidden">
                             <h1>ABOUT ME</h1>
                         </div>

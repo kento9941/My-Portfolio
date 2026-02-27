@@ -42,7 +42,7 @@ export default function App() {
             <Navigation />
           </div>
 
-          <div className="fixed top-[clamp(3.5rem,7vh,10rem)] left-1/2 -translate-x-1/2 lg:top-[5vh] lg:right-[5vw] lg:left-auto lg:translate-x-0 z-50">
+          <div className="fixed top-[clamp(3.5rem,7vh,10rem)] left-1/2 -translate-x-1/2 landscape:top-[clamp(0.8rem,4vh,1rem)] lg:top-[5vh] lg:right-[3vw] lg:left-auto lg:translate-x-0 z-50">
             <ToggleButton />
           </div>
         </header>

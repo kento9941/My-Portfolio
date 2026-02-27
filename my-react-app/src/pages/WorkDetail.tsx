@@ -14,13 +14,13 @@ export default function WorkDetail() {
 
     return (
         <motion.main
-            className="relative w-screen min-h-screen flex flex-col pt-[30vh] lg:pt-[40vh] pl-[10vw] pr-[10vw] lg:pl-[15vw] lg:pr-[5vw]"
+            className="relative w-screen min-h-screen flex flex-col pt-[30vh] sm:landscape:pt-[50vh] md:landscape:pt-[60vh] lg:pt-[40vh] pl-[10vw] pr-[10vw] lg:pl-[15vw] lg:pr-[5vw]"
             exit={{ opacity: 0, filter: "blur(3px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <NavLink to="/Works">
                 <motion.div
-                    className="fixed top-[10vh] left-[5vw] lg:top-[5vh] lg:left-[15vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1 z-10"
+                    className="sm:landscape:hidden md:landscape:hidden fixed top-[10vh] left-[5vw] lg:top-[5vh] lg:left-[15vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-row items-center gap-1 z-10"
                     initial={{ opacity: 0, filter: "blur(3px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -38,7 +38,7 @@ export default function WorkDetail() {
             </NavLink>
 
             <motion.div
-                className="lg:hidden fixed top-[10vh] right-[5vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-col items-end justify-start gap-1 z-10"
+                className="lg:hidden landscape:hidden fixed top-[10vh] right-[5vw] text-[clamp(0.6rem,1vw,1.5rem)] md:text-[clamp(1rem,1.5vw,1.5rem)] font-light flex flex-col items-end justify-start gap-1 z-10"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
@@ -89,16 +89,19 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="fixed top-[5vh] left-[10vw] lg:top-[15vh] lg:left-[15vw] w-[80vw] flex flex-row items-end justify-between"
+                className="fixed top-[5vh] left-[10vw] landscape:top-[10vh] lg:top-[15vh] lg:left-[15vw] w-[80vw] flex flex-row items-end justify-between"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light md:font-thin">
+                <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light">
                     <h1>{data?.title}</h1>
                 </div>
                 
-                <div className="hidden lg:flex lg:flex-row lg:items-end lg:gap-[1rem] lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-light lg:mb-[clamp(0.2rem,1.2vh,0.8rem)]">
+                <div
+                    className={`hidden lg:flex lg:flex-row lg:items-end lg:gap-[1rem] lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-light lg:mb-[clamp(0.2rem,1.2vh,0.8rem)]
+                        landscape:flex landscape:flex-row landscape:items-end landscape:gap-[1rem] landscape:text-[clamp(0.8rem,1.2vw,1.2rem)] landscape:font-light
+                    `}>
                     {data?.github &&
                     (
                         <a
@@ -144,14 +147,14 @@ export default function WorkDetail() {
             </motion.div>
 
             <motion.div
-                className="fixed top-[20vh] left-[10vw] lg:top-[30vh] lg:left-[15vw] w-[80vw] h-[1px] bg-[#888888aa]"
+                className="fixed top-[20vh] left-[10vw] landscape:top-[25vh] lg:top-[30vh] lg:left-[15vw] w-[80vw] h-[1px] bg-[#888888aa]"
                 initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             />
 
             <motion.div
-                className="flex flex-col min-h-[200vh] md:min-h-[200vh] lg:min-h-[370vh] w-full"
+                className="flex flex-col min-h-[200vh] landscape:min-h-[350vh] md:min-h-[200vh] lg:portrait:min-h-[180vh] lg:min-h-[clamp(20rem,370vh,30rem)] w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
@@ -187,7 +190,7 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:max-h-[30vh] lg:max-h-full aspect-video flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[30vh] landscape:max-h-full lg:max-h-full aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg3}
                             className="absolute inset-0 w-full h-full object-cover"
@@ -199,7 +202,7 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:max-h-[30vh] lg:max-h-full aspect-video flex items-center justify-center bg-[#aaaaaa]">
+                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[30vh] landscape:max-h-full lg:max-h-full aspect-video flex items-center justify-center bg-[#aaaaaa]">
                         {data?.bg4 && (
                             <img
                                 loading="lazy"
@@ -216,11 +219,11 @@ export default function WorkDetail() {
                     </div>
                 </div>
 
-                <div className="h-[65vh] md:h-[60vh] flex flex-col md:flex-row items-start justify-between font-light mt-auto mb-[10vh] md:mb-[10vh] lg:mb-8">
+                <div className="h-[65vh] md:h-[60vh] flex flex-col landscape:flex-row md:flex-row items-start justify-between font-light mt-auto mb-[10vh] landscape:mb-[7.5vh] lg:mb-8 sm:landscape:gap-[3vw]">
                     <div className="w-[80vw] md:w-[40vw] lg:w-[35vw] flex flex-col gap-8">
                         <div className="flex flex-col items-start justify-between gap-2">
                             <h2 className="text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.1rem,2vw,2rem)]">TOOLS</h2>
-                            <div className="w-full text-[clamp(0.7rem,1vw,1rem)] flex flex-wrap gap-2">
+                            <div className="w-full text-[clamp(0.7rem,1vw,1rem)] landscape:text-[clamp(0.6rem,0.8vw,0.8rem)] lg:portrait:text-[clamp(0.7rem,1vw,1rem)] lg:landscape:text-[clamp(0.7rem,1vw,1rem)] flex flex-wrap gap-2">
                                 {data?.techs.map((val) => (
                                     <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>{val}</p>
                                 ))}
@@ -230,12 +233,12 @@ export default function WorkDetail() {
                         <div className="flex flex-row items-start justify-between">
                             <div className="flex flex-col items-start justify-between gap-2">
                                 <h2 className="text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.1rem,2vw,2rem)]">DURATION</h2>
-                                <p className="text-[clamp(0.8rem,1.5vw,1rem)] lg:text-[clamp(1rem,1.2vw,1.5rem)]">{data?.duration}</p>
+                                <p className="text-[clamp(0.8rem,1.5vw,1rem)] landscape:text-[clamp(0.7rem,1vw,1.2rem)] lg:portrait:text-[clamp(1rem,1.2vw,1.5rem)] lg:landscape:text-[clamp(1rem,1.2vw,1.5rem)]">{data?.duration}</p>
                             </div>
 
                             <div className="flex flex-col items-start justify-between gap-2">
                                 <h2 className="text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.1rem,2vw,2rem)]">ROLES</h2>
-                                <p className="text-[clamp(0.8rem,1.5vw,1rem)] lg:text-[clamp(1rem,1.2vw,1.5rem)]">{data?.roles}</p>
+                                <p className="text-[clamp(0.8rem,1.5vw,1rem)] landscape:text-[clamp(0.7rem,1vw,1.2rem)] lg:portrait:text-[clamp(1rem,1.2vw,1.5rem)] lg:landscape:text-[clamp(1rem,1.2vw,1.5rem)]">{data?.roles}</p>
                             </div>
                         </div>
                     </div>

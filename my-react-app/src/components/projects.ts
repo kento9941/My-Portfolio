@@ -26,7 +26,7 @@ export const projects = [
         techs: ["TypeScript", "Next.js", "Python", "Tailwind CSS", "FastAPI", "EasyOCR", "LibreTranslate API", "Pixabay API"],
         duration: "3 weeks",
         roles: "Design / Frontend / Backend",
-        summary: "Menu Scanner is a web application that extracts text from menu images, translates it into the user's language, and retrieves representative dish images. Even if users can't read the original language, they can quickly grasp what each dish looks like and make more confident ordering decisions while traveling.",
+        summary: "A web application that extracts text from menu images, translates it into the user's language, and retrieves representative dish images. Even if users can't read the original language, they can quickly grasp what each dish looks like and make more confident ordering decisions while traveling.",
         image1: "/ms.gif",
         image2: "/ms2.gif",
         image3: "/ms3.webp",

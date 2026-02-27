@@ -9,9 +9,9 @@ export default function Gallery() {
             initial={{ opacity: 0, filter: "blur(3px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, filter: "blur(3px)", transition: { duration: 0.8, ease: "easeOut" } }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-            <div className="w-[80vw] lg:w-[70vw] h-[15vh] flex flex-row items-end justify-between">
+            <div className="w-[80vw] lg:w-[70vw] h-[15vh] sm:landscape:h-[30vh] md:landscape:h-[30vh] lg:landscape:h-[15vh] flex flex-row items-end justify-between">
                 <h1 className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">Origami Gallery</h1>
                 <a
                     className="flex items-end justify-center text-[clamp(0.8rem,1vw,1.5rem)] font-light mb-1"
