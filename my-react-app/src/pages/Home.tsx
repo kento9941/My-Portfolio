@@ -23,13 +23,13 @@ export default function Home() {
 
     return (
         <motion.main
-            className="pb-[10vh]"
+            className="pb-[10vh] overflow-y-scroll snap-y snap-mandatory"
             exit={{ opacity: 0, filter: "blur(1px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* about */}
             <motion.section
-                className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw] lg:flex-row lg:items-center lg:gap-[10vw]"
+                className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw] lg:flex-row lg:items-center lg:gap-[10vw] snap-center"
                 initial={{ opacity: 0, filter: "blur(1px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -96,7 +96,7 @@ export default function Home() {
                     <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]"/>
 
                     <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-1 leading-[clamp(1.1rem,3vh,1.4rem)]">
-                        <p>I am currently in my final year of a Bachelor of Information Technology at Adelaide University.</p>
+                        <p>I am currently in my final year of Bachelor of Information Technology at Adelaide University.</p>
                         <p>My main focus is web development, and I have worked on several full-stack personal projects. I enjoy exploring new technologies and experimenting with creative ideas.</p>
                         <p>Outside of programming, I create origami art, play basketball, tennis, and chess.</p>
                     </div>
@@ -105,7 +105,7 @@ export default function Home() {
 
             {/* motivation */}
             <motion.section
-                className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-center lg:gap-[10vw]"
+                className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-center lg:gap-[10vw] snap-center"
                 initial={{ opacity: 0, filter: "blur(1px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -134,7 +134,7 @@ export default function Home() {
 
             {/* skills */}
             <motion.section
-                className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(2rem,5vh,5rem)] lg:pl-[15vw] flex flex-col"
+                className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(2rem,5vh,5rem)] lg:pl-[15vw] flex flex-col snap-center"
                 initial={{ opacity: 0, filter: "blur(1px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.5 }}

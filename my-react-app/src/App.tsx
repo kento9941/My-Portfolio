@@ -12,12 +12,15 @@ import { useCursorStore } from "./store/useCursorStore";
 import { useThemeStore } from "./store/useThemeStore";
 import ToggleButton from "./components/toggle-button";
 import NotFound from "./pages/NotFound";
+import { useLenis } from "./hooks/lenis";
 
 export default function App() {
   const { theme } = useThemeStore();
 
+  useLenis();
+
   return (
-    <div className={`relative w-full h-screen select-none transition-colors duration-700 
+    <div className={`relative w-full min-h-screen select-none transition-colors duration-700 
       ${theme === "dark" ? "text-[#ffffffdc]" : "text-[#101010]"}`}
     >
       {/* mouse effect background */}

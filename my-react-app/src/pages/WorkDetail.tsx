@@ -187,7 +187,7 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[30vh] landscape:max-h-full lg:max-h-full aspect-video flex items-center justify-center">
+                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[25vh] landscape:max-h-[60vh] lg:max-h-full aspect-video flex items-center justify-center">
                         <img
                             src={data?.bg3}
                             className="absolute inset-0 w-full h-full object-cover"
@@ -199,7 +199,7 @@ export default function WorkDetail() {
                         />
                     </div>
 
-                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[30vh] landscape:max-h-full lg:max-h-full aspect-video flex items-center justify-center bg-[#aaaaaa]">
+                    <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[25vh] landscape:max-h-[60vh] lg:max-h-full aspect-video flex items-center justify-center bg-[#aaaaaa]">
                         {data?.bg4 && (
                             <img
                                 loading="lazy"

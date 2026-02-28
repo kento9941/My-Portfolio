@@ -53,10 +53,10 @@ export default function Gallery() {
                 <Origami url="shape-of-love.webp" title="Shape of Love" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
                 <Origami url="dragon.webp" title="Dragon Head" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
                 <Origami url="dreaming-bear.webp" title="Dreaming Bear" designer="Giang Dinh" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load="lazy" />
-                <Origami url="gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load="lazy" />
-                <Origami url="gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load="lazy" />
-                <Origami url="locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load="lazy" />
+                <Origami url="samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load={undefined} />
             </div>
         </motion.main>
     )
@@ -72,14 +72,8 @@ type Props = {
 
 function Origami({ url, title, designer, folder, load }: Props) {
     return (
-        <motion.div
-            className="w-full md:w-[30vw] flex flex-col items-start justify-start"
-            initial={{ opacity: 0, filter: "blur(1px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-            <img src={url} alt={title} className="w-full object-contain opacity-[80%]" loading={load} />
+        <div className="w-full md:w-[30vw] flex flex-col items-start justify-start">
+            <img src={url} alt={title} className="w-full object-contain opacity-[90%] will-change-[opacity] transform-gpu" loading={load} />
             <h2 className="mt-2 text-[clamp(1rem,1.2vw,1.5rem)] font-light">{title}</h2>
             <div className="flex flex-row items-start justify-start mt-1 text-[clamp(0.8rem,1vw,1.5rem)] font-light">
                 <div className="flex flex-col items-start justify-start">
@@ -91,6 +85,6 @@ function Origami({ url, title, designer, folder, load }: Props) {
                     <p>: {folder}</p>
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }

@@ -7,6 +7,7 @@ export default function ScrollReset() {
     useEffect(() => {
         const timer = setTimeout(() => {
             window.scrollTo(0, 0);
+            window.dispatchEvent(new Event('resize'));
         }, 800);
       
         return () => clearTimeout(timer);
