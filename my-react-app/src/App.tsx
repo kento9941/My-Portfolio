@@ -11,6 +11,7 @@ import ScrollReset from "./components/scroll-reset";
 import { useCursorStore } from "./store/useCursorStore";
 import { useThemeStore } from "./store/useThemeStore";
 import ToggleButton from "./components/toggle-button";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const { theme } = useThemeStore();
@@ -52,7 +53,7 @@ export default function App() {
         </div>
       </BrowserRouter>
 
-      <footer className="fixed bottom-[0.8rem] left-[3vw] w-screen h-[1rem] text-[clamp(0.5rem,0.8vw,1rem)] font-light">
+      <footer className="fixed bottom-[0.2rem] md:bottom-[0.8rem] left-[3vw] h-[1rem] text-[clamp(0.5rem,0.8vw,1rem)] font-light">
         <p>Ⓒ Kento Kawazoe</p>
       </footer>
     </div>
@@ -73,6 +74,7 @@ function AnimatedRoutes() {
         <Route path="/Works" element={<Works />} />
         <Route path="/Works/:id" element={<WorkDetail />} />
         <Route path="/Gallery" element={<Gallery />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   )

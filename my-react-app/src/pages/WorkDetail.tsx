@@ -95,7 +95,7 @@ export default function WorkDetail() {
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <div className="flex flex-row items-end justify-between">
-                    <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(2rem,3vw,3rem)] font-light">
+                    <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.5rem,2.5vw,2.5rem)] font-light">
                         <h1>{data?.title}</h1>
                     </div>
                     
@@ -217,12 +217,12 @@ export default function WorkDetail() {
                 </div>
 
                 <div className="h-[65vh] md:h-[60vh] flex flex-col landscape:flex-row md:flex-row items-start justify-between font-light mt-auto mb-[10vh] landscape:mb-[7.5vh] lg:mb-8 sm:landscape:gap-[3vw]">
-                    <div className="w-[80vw] md:w-[40vw] lg:w-[35vw] flex flex-col gap-8">
+                    <div className="w-[80vw] md:w-[40vw] lg:w-[35vw] flex flex-col gap-5 md:gap-8">
                         <div className="flex flex-col items-start justify-between gap-2">
                             <h2 className="text-[clamp(1rem,1.5vw,2rem)] md:text-[clamp(1.1rem,2vw,2rem)]">TOOLS</h2>
-                            <div className="w-full text-[clamp(0.7rem,1vw,1rem)] landscape:text-[clamp(0.6rem,0.8vw,0.8rem)] lg:portrait:text-[clamp(0.7rem,1vw,1rem)] lg:landscape:text-[clamp(0.7rem,1vw,1rem)] flex flex-wrap gap-2">
+                            <div className="w-full text-[clamp(0.7rem,1vw,1rem)] landscape:text-[clamp(0.6rem,0.8vw,0.8rem)] lg:portrait:text-[clamp(0.7rem,1vw,1rem)] lg:landscape:text-[clamp(0.7rem,1vw,1rem)] flex flex-wrap gap-1 md:gap-2">
                                 {data?.techs.map((val) => (
-                                    <p className={`w-fit h-fit p-1 px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>{val}</p>
+                                    <p className={`w-fit h-fit p-[0.15rem] px-[0.8rem] md:p-1 md:px-5 m-1 border border-[#888888aa] rounded-full duration-500 ${theme === "dark" ? "hover:bg-white hover:text-[#101010]" : "hover:bg-black hover:text-[#ffffffcc]"}`}>{val}</p>
                                 ))}
                             </div>
                         </div>

@@ -90,9 +90,7 @@ export default function Home() {
 
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-end">
                     <div className="h-[10vh] lg:h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <div className="overflow-hidden">
-                            <h1>ABOUT ME</h1>
-                        </div>
+                        <h1>ABOUT ME</h1>
                     </div>
 
                     <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]"/>
@@ -115,9 +113,7 @@ export default function Home() {
             >
                 <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <div className="h-auto overflow-hidden">
-                            <h1>MOTIVATION</h1>
-                        </div>
+                        <h1>MOTIVATION</h1>
                     </div>
 
                     <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-[#888888aa]"/>
@@ -147,16 +143,14 @@ export default function Home() {
 
                 <div className="w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start">
                     <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1">
-                        <div className="h-auto overflow-hidden">
-                            <h1>SKILLS</h1>
-                        </div>
+                        <h1>SKILLS</h1>
                     </div>
 
                     <div className="w-[80vw] lg:w-[75vw] h-[1px] bg-[#888888aa]"/>
 
                     <div className="mt-[5vh] w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start gap-10 lg:flex-row lg:items-start lg:justify-between">
                         <div className="flex flex-col w-[80vw] lg:w-[25vw] gap-3 font-light">
-                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto tracking-wide">
                                 <h2>FRONTEND</h2>
                             </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
@@ -170,7 +164,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto tracking-wide">
                                 <h2>BACKEND</h2>
                             </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
@@ -183,7 +177,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto overflow-hidden tracking-wide">
+                            <div className="text-[clamp(1rem,1.5vw,2rem)] h-auto tracking-wide">
                                 <h2>TOOLS</h2>
                             </div>
                             <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
