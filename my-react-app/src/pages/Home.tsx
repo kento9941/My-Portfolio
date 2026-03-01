@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useCursorStore } from "../store/useCursorStore";
 import ParallaxImage from "../components/parallax-image";
 import { NavLink } from "react-router-dom";
