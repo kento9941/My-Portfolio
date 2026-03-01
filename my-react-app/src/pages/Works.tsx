@@ -48,6 +48,7 @@ export default function Works() {
                             loop
                             playsInline
                             disablePictureInPicture
+                            controls={false}
                         />
                     </Link>
                 </motion.div>
@@ -74,6 +75,7 @@ export default function Works() {
                         loop
                         playsInline
                         disablePictureInPicture
+                        controls={false}
                     />
                 </Link>
 
@@ -99,6 +101,7 @@ export default function Works() {
                         loop
                         playsInline
                         disablePictureInPicture
+                        controls={false}
                     />
                 </Link>
 
@@ -148,6 +151,7 @@ export default function Works() {
                             loop
                             playsInline
                             disablePictureInPicture
+                            controls={false}
                         />
                     </Link>
                 </motion.div>
@@ -171,6 +175,7 @@ export default function Works() {
                             loop
                             playsInline
                             disablePictureInPicture
+                            controls={false}
                         />
                     </Link>
                 </motion.div>
@@ -194,6 +199,7 @@ export default function Works() {
                             loop
                             playsInline
                             disablePictureInPicture
+                            controls={false}
                         />
                     </Link>
                 </motion.div>
