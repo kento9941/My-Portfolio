@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useParams, NavLink, Link } from "react-router-dom";
 import { projects } from "../components/projects";
+import Media from "../components/media";
 import { useCursorStore } from "../store/useCursorStore";
 import { useThemeStore } from "../store/useThemeStore";
 
@@ -163,11 +164,11 @@ export default function WorkDetail() {
                             src={data?.bg1}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <img
-                            loading="eager"
+                        <Media
                             src={data?.image1}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
+                            loading="eager"
                         />
                     </div>
 
@@ -179,11 +180,11 @@ export default function WorkDetail() {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                         )}
-                        <img
-                            loading="eager"
+                        <Media
                             src={data?.image2}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
+                            loading="eager"
                         />
                     </div>
 
@@ -192,10 +193,11 @@ export default function WorkDetail() {
                             src={data?.bg3}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <img
+                        <Media
                             src={data?.image3}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
+                            loading={undefined}
                         />
                     </div>
 
@@ -207,11 +209,11 @@ export default function WorkDetail() {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                         )}
-                        <img
-                            loading="lazy"
+                        <Media
                             src={data?.image4}
                             alt={data?.title}
                             className="z-10 w-full h-full object-contain p-[clamp(0.5rem,2vw,1.5rem)] md:p-10"
+                            loading="lazy"
                         />
                     </div>
                 </div>

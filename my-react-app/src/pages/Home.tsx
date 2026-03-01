@@ -126,7 +126,7 @@ export default function Home() {
                 </div>
 
                 <ParallaxImage
-                    src="/me.webp"
+                    src="/me_optimized.webp"
                     classname="mt-[5vh] w-[80vw] aspect-[8/5] lg:w-[35vw] lg:aspect-[8/5] flex items-center justify-center overflow-hidden"
                     hover="default"
                 />

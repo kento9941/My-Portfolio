@@ -34,16 +34,20 @@ export default function Works() {
                         onMouseLeave={() => set("default")}
                     >
                         <motion.img
-                            src="black-bg.webp"
+                            src="black_bg.webp"
                             className="absolute inset-0 w-full h-full object-cover"
                             onViewportEnter={() => setFocus(works[0])}
                             viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                         />
-                        <motion.img
-                            loading="eager"
-                            src="/sms.gif"
-                            alt="Strudel Music Sequencer"
+                        <video
+                            src="/sms_optimized.mp4"
                             className="w-[35vw] z-10"
+                            preload="metadata"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            disablePictureInPicture
                         />
                     </Link>
                 </motion.div>
@@ -56,15 +60,20 @@ export default function Works() {
                     onMouseLeave={() => set("default")}
                 >
                     <motion.img
-                        src="beige-bg.webp"
+                        src="beige_bg.webp"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[1])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                     />
-                    <img
-                        src="/ms.gif"
-                        alt="Menu Scanner"
+                    <video
+                        src="/ms_optimized.mp4"
                         className="w-[35vw] z-10"
+                        preload="metadata"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        disablePictureInPicture
                     />
                 </Link>
 
@@ -76,16 +85,20 @@ export default function Works() {
                     onMouseLeave={() => set("default")}
                 >
                     <motion.img
-                        src="plant-bg.webp"
+                        src="plant_bg.webp"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[2])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                     />
-                    <img
-                        loading="lazy"
-                        src="/portfolio1.gif"
-                        alt="Portfolio 1"
-                        className="w-[35vw] z-10 select-none"
+                    <video
+                        src="/portfolio1_optimized.mp4"
+                        className="w-[35vw] z-10"
+                        preload="metadata"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        disablePictureInPicture
                     />
                 </Link>
 
@@ -98,7 +111,7 @@ export default function Works() {
                     onMouseLeave={() => set("default")}
                 >
                     <motion.img
-                        src="flower-bg.webp"
+                        src="flower_bg.webp"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[3])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
@@ -123,13 +136,18 @@ export default function Works() {
                 >
                     <Link key="1" to="/Works/1" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
-                            src="black-bg.webp"
+                            src="black_bg.webp"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <img
-                            src="/sms.gif"
-                            alt="Strudel Music Sequencer"
-                            className="w-[60vw] z-10"
+                        <video
+                            src="/sms_optimized.mp4"
+                            className="w-[35vw] z-10"
+                            preload="metadata"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            disablePictureInPicture
                         />
                     </Link>
                 </motion.div>
@@ -141,13 +159,18 @@ export default function Works() {
                 >
                     <Link key="2" to="/Works/2" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
-                            src="beige-bg.webp"
+                            src="beige_bg.webp"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <img
-                            src="/ms.gif"
-                            alt="Menu Scanner"
-                            className="w-[60vw] z-10"
+                        <video
+                            src="/ms_optimized.mp4"
+                            className="w-[35vw] z-10"
+                            preload="metadata"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            disablePictureInPicture
                         />
                     </Link>
                 </motion.div>
@@ -159,13 +182,18 @@ export default function Works() {
                 >
                     <Link key="3" to="/Works/3" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
-                            src="plant-bg.webp"
+                            src="plant_bg.webp"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <img
-                            src="/portfolio1.gif"
-                            alt="Portfolio 1"
-                            className="w-[60vw] z-10"
+                        <video
+                            src="/portfolio1_optimized.mp4"
+                            className="w-[35vw] z-10"
+                            preload="metadata"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            disablePictureInPicture
                         />
                     </Link>
                 </motion.div>
@@ -182,7 +210,7 @@ export default function Works() {
                         className="relative w-[70vw] aspect-[2/1] flex items-center justify-center"
                     >
                         <img
-                            src="flower-bg.webp"
+                            src="flower_bg.webp"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
