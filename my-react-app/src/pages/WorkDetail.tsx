@@ -4,11 +4,16 @@ import { projects } from "../components/projects";
 import Media from "../components/media";
 import { useCursorStore } from "../store/useCursorStore";
 import { useThemeStore } from "../store/useThemeStore";
+import NotFound from "./NotFound";
 
 export default function WorkDetail() {
     const { id } = useParams();
     const data = projects.find((p) => p.id === id);
-    const nextData = projects.find((p) => p.id === data?.next)
+    const nextData = projects.find((p) => p.id === data?.next);
+
+    if (!data) {
+        return <NotFound />;
+    }
 
     const set = useCursorStore((state) => state.setCursorType);
     const { theme } = useThemeStore();

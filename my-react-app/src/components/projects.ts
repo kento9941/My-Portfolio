@@ -42,7 +42,7 @@ export const projects = [
         title: "PORTFOLIO 1",
         github: null,
         demo: "https://kento-kawazoe.com",
-        techs: ["WordPress", "CSS", "JavaScript", "MySQL", "Figma"],
+        techs: ["WordPress", "CSS", "JavaScript", "Figma"],
         duration: "1 week",
         roles: "Design / Frontend",
         summary: "My first portfolio, built with WordPress, CSS, and JavaScript. This project marked my first exploration into web interactivity, featuring SVG animations and scroll-driven effects. It is a foundational milestone where I began blending technical logic with visual motion, setting the stage for my evolution into creative development.",
