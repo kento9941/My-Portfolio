@@ -32,7 +32,7 @@ export const projects = [
         image3: "/ms3.webp",
         image4: "/ms4_optimized.mp4",
         bg1: "/flower_bg.webp",
-        bg2: undefined,
+        bg2: "/grey_bg.webp",
         bg3: "/beige_bg.webp",
         bg4: "/plant_bg.webp",
         next: "3"

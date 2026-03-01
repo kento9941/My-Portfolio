@@ -4,11 +4,12 @@ import { useCursorStore, type CursorType } from "../store/useCursorStore";
 
 type Props = {
     src: string,
+    alt: string,
     classname: string,
     hover: CursorType
 }
 
-export default function ParallaxImage({ src, classname, hover="default" }: Props) {
+export default function ParallaxImage({ src, alt, classname, hover="default" }: Props) {
     const ref = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -33,6 +34,7 @@ export default function ParallaxImage({ src, classname, hover="default" }: Props
         >
             <motion.img
                 src={src}
+                alt={alt}
                 className="w-full object-cover opacity-[80%]"
                 style={{ y }}
             />

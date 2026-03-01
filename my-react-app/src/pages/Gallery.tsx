@@ -56,38 +56,38 @@ export default function Gallery() {
                     style={{ y: yLeft }}
                     className="w-[30vw] flex flex-col gap-10"
                 >
-                    <Origami url="girl_and_dog.webp" title="Girl and Dog" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                    <Origami url="shape_of_love.webp" title="Shape of Love" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
-                    <Origami url="mother_and_child.webp" title="Mother and Child" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                    <Origami url="prayer.webp" title="Prayer" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                    <Origami url="snail.webp" title="Snail" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
-                    <Origami url="dragon.webp" title="Dragon Head" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                    <Origami url="/girl_and_dog.webp" title="Girl and Dog" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                    <Origami url="/shape_of_love.webp" title="Shape of Love" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                    <Origami url="/mother_and_child.webp" title="Mother and Child" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                    <Origami url="/prayer.webp" title="Prayer" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                    <Origami url="/snail.webp" title="Snail" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                    <Origami url="/dragon.webp" title="Dragon Head" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
                 </motion.div>
 
                 <motion.div
                     style={{ y: yRight }}
                     className="w-[30vw] flex flex-col gap-10"
                 >
-                    <Origami url="gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load="lazy" />
-                    <Origami url="locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load="lazy" />
-                    <Origami url="dreaming_bear.webp" title="Dreaming Bear" designer="Giang Dinh" folder="Kento Kawazoe" load={undefined} />
-                    <Origami url="samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
-                    <Origami url="gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load="lazy" />
+                    <Origami url="/gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load="lazy" />
+                    <Origami url="/locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load="lazy" />
+                    <Origami url="/dreaming_bear.webp" title="Dreaming Bear" designer="Giang Dinh" folder="Kento Kawazoe" load={undefined} />
+                    <Origami url="/samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
+                    <Origami url="/gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load="lazy" />
                 </motion.div>
             </div>
 
             <div className="md:hidden w-[70vw] flex flex-col pt-[5vh] gap-10">
-                <Origami url="girl_and_dog.webp" title="Girl and Dog" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                <Origami url="mother_and_child.webp" title="Mother and Child" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                <Origami url="prayer.webp" title="Prayer" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
-                <Origami url="snail.webp" title="Snail" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="shape_of_love.webp" title="Shape of Love" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="dragon.webp" title="Dragon Head" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="dreaming_bear.webp" title="Dreaming Bear" designer="Giang Dinh" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load={undefined} />
-                <Origami url="locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load="lazy" />
+                <Origami url="/girl_and_dog.webp" title="Girl and Dog" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                <Origami url="/mother_and_child.webp" title="Mother and Child" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                <Origami url="/prayer.webp" title="Prayer" designer="Kento Kawazoe" folder="Kento Kawazoe" load="eager" />
+                <Origami url="/snail.webp" title="Snail" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/shape_of_love.webp" title="Shape of Love" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/dragon.webp" title="Dragon Head" designer="Kento Kawazoe" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/dreaming_bear.webp" title="Dreaming Bear" designer="Giang Dinh" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/samothrace.webp" title="Winged Victory of Samothrace" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/gabriel.webp" title="Gabriel" designer="Takashi Hojo" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/gecko.webp" title="Gecko and Fly on a Wall" designer="Herman van Goubergen" folder="Kento Kawazoe" load={undefined} />
+                <Origami url="/locust.webp" title="Longheaded Locust" designer="Satoshi Kamiya" folder="Kento Kawazoe" load="lazy" />
             </div>
 
             <div className="cursive w-full h-auto overflow-hidden flex items-center justify-center mt-[clamp(3rem,10vh,5rem)] text-[clamp(1rem,1.5vw,2rem)] lg:-translate-x-[5vw] md:-translate-y-[25vh] md:text-[clamp(1.5rem,2vw,2.5rem)] md:font-thin">

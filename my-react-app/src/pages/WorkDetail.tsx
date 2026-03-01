@@ -161,6 +161,7 @@ export default function WorkDetail() {
                     <div className="relative w-[50vw] max-w-4xl aspect-video flex items-center justify-center">
                         <img
                             loading="eager"
+                            alt="Background"
                             src={data?.bg1}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
@@ -176,6 +177,7 @@ export default function WorkDetail() {
                         {data?.bg2 && (
                             <img
                                 loading="eager"
+                                alt="Background"
                                 src={data?.bg2}
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
@@ -190,6 +192,7 @@ export default function WorkDetail() {
 
                     <div className="relative w-[50vw] max-w-4xl max-h-[20vh] md:portrait:max-h-[25vh] landscape:max-h-[60vh] lg:max-h-full aspect-video flex items-center justify-center">
                         <img
+                            alt="Background"
                             src={data?.bg3}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
@@ -205,6 +208,7 @@ export default function WorkDetail() {
                         {data?.bg4 && (
                             <img
                                 loading="lazy"
+                                alt="Background"
                                 src={data?.bg4}
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
