@@ -35,20 +35,27 @@ export default function Works() {
                     >
                         <motion.img
                             src="black_bg.webp"
+                            alt="Background"
                             className="absolute inset-0 w-full h-full object-cover"
                             onViewportEnter={() => setFocus(works[0])}
                             viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                         />
                         <video
                             src="/sms_optimized.mp4"
-                            className="w-[35vw] z-10"
-                            preload="auto"
+                            className="hidden lg:block w-[35vw] z-10"
+                            playsInline
                             autoPlay
                             muted
                             loop
-                            playsInline
+                            preload="auto"
                             disablePictureInPicture
                             controls={false}
+                        />
+                        <img
+                            loading="eager"
+                            src="/sms2.webp"
+                            alt="Strudel Music Sequencer"
+                            className="lg:hidden w-[35vw] z-10"
                         />
                     </Link>
                 </motion.div>
@@ -62,13 +69,14 @@ export default function Works() {
                 >
                     <motion.img
                         src="beige_bg.webp"
+                        alt="Background"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[1])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                     />
                     <video
                         src="/ms_optimized.mp4"
-                        className="w-[35vw] z-10"
+                        className="hidden lg:block w-[35vw] z-10"
                         preload="auto"
                         autoPlay
                         muted
@@ -76,6 +84,11 @@ export default function Works() {
                         playsInline
                         disablePictureInPicture
                         controls={false}
+                    />
+                    <img
+                        src="/ms0.webp"
+                        alt="Menu Scanner"
+                        className="lg:hidden w-[35vw] z-10"
                     />
                 </Link>
 
@@ -88,13 +101,14 @@ export default function Works() {
                 >
                     <motion.img
                         src="plant_bg.webp"
+                        alt="Background"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[2])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
                     />
                     <video
                         src="/portfolio1_optimized.mp4"
-                        className="w-[35vw] z-10"
+                        className="hidden lg:block w-[35vw] z-10"
                         preload="auto"
                         autoPlay
                         muted
@@ -102,6 +116,11 @@ export default function Works() {
                         playsInline
                         disablePictureInPicture
                         controls={false}
+                    />
+                    <img
+                        src="/portfolio2.webp"
+                        alt="Portfolio 1"
+                        className="lg:hidden w-[35vw] z-10"
                     />
                 </Link>
 
@@ -115,6 +134,7 @@ export default function Works() {
                 >
                     <motion.img
                         src="flower_bg.webp"
+                        alt="Background"
                         className="absolute inset-0 w-full h-full object-cover"
                         onViewportEnter={() => setFocus(works[3])}
                         viewport={{ amount: "some", margin: "-50% 0px -50% 0px" }}
@@ -140,11 +160,12 @@ export default function Works() {
                     <Link key="1" to="/Works/1" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
                             src="black_bg.webp"
+                            alt="Background"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <video
                             src="/sms_optimized.mp4"
-                            className="w-[35vw] z-10"
+                            className="hidden lg:block w-[60vw] z-10"
                             preload="auto"
                             autoPlay
                             muted
@@ -152,6 +173,11 @@ export default function Works() {
                             playsInline
                             disablePictureInPicture
                             controls={false}
+                        />
+                        <img
+                            src="/sms2.webp"
+                            alt="Strudel Music Sequencer"
+                            className="lg:hidden w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
@@ -164,11 +190,12 @@ export default function Works() {
                     <Link key="2" to="/Works/2" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
                             src="beige_bg.webp"
+                            alt="Background"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <video
                             src="/ms_optimized.mp4"
-                            className="w-[35vw] z-10"
+                            className="hidden lg:block w-[60vw] z-10"
                             preload="auto"
                             autoPlay
                             muted
@@ -176,6 +203,11 @@ export default function Works() {
                             playsInline
                             disablePictureInPicture
                             controls={false}
+                        />
+                        <img
+                            src="/ms0.webp"
+                            alt="Menu Scanner"
+                            className="lg:hidden w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
@@ -188,11 +220,12 @@ export default function Works() {
                     <Link key="3" to="/Works/3" className="relative w-[70vw] aspect-[2/1] flex items-center justify-center">
                         <img
                             src="plant_bg.webp"
+                            alt="Background"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <video
                             src="/portfolio1_optimized.mp4"
-                            className="w-[35vw] z-10"
+                            className="hidden lg:block w-[60vw] z-10"
                             preload="auto"
                             autoPlay
                             muted
@@ -200,6 +233,11 @@ export default function Works() {
                             playsInline
                             disablePictureInPicture
                             controls={false}
+                        />
+                        <img
+                            src="/portfolio2.webp"
+                            alt="Portfolio 1"
+                            className="lg:hidden w-[60vw] z-10"
                         />
                     </Link>
                 </motion.div>
@@ -217,6 +255,7 @@ export default function Works() {
                     >
                         <img
                             src="flower_bg.webp"
+                            alt="Background"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <img
