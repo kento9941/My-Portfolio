@@ -4,16 +4,16 @@ export default function Contact() {
     return (
         <>
             <div className="lg:hidden flex flex-row items-end justify-center gap-3 text-[clamp(0.4rem,1.5vw,1.5rem) font-extralight">
-                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
-                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
-                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" label="Visit LinkedIn profile" />
+                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" label="Visit Instagram profile" />
+                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" label="Visit GitHub profile" />
                 <Email />
             </div>
 
             <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-2 lg:pt-5 lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-extralight">
-                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
-                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
-                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+                <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" label="Visit LinkedIn profile" />
+                <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" label="Visit Instagram profile" />
+                <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" label="Visit GitHub profile" />
                 <Email />
             </div>
         </>
@@ -23,13 +23,15 @@ export default function Contact() {
 type Props = {
     brand: string,
     url: string,
+    label: string,
 }
 
-function Icon({brand, url} : Props) {
+function Icon({brand, url, label} : Props) {
     const set = useCursorStore((state) => state.setCursorType);
     return (
         <a
             href={url}
+            aria-label={label}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => set("hover")}

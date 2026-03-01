@@ -18,6 +18,7 @@ export default function ToggleButton() {
                 onMouseEnter={() => setCursor("hover")}
                 onMouseLeave={() => setCursor("default")}
                 onClick={() => theme === "dark" ? toggleTheme("light") : toggleTheme("dark")}
+                aria-label="Toggle light and dark mode"
             >
                 {/* light */}
                 <div
