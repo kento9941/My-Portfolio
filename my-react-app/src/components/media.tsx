@@ -27,7 +27,7 @@ export default function Media({ src, alt, className, loading=undefined }: Props)
             <video
                 src={src}
                 className={className}
-                preload="metadata"
+                preload="auto"
                 autoPlay
                 muted
                 loop

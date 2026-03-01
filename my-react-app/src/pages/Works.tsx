@@ -42,7 +42,7 @@ export default function Works() {
                         <video
                             src="/sms_optimized.mp4"
                             className="w-[35vw] z-10"
-                            preload="metadata"
+                            preload="auto"
                             autoPlay
                             muted
                             loop
@@ -68,7 +68,7 @@ export default function Works() {
                     <video
                         src="/ms_optimized.mp4"
                         className="w-[35vw] z-10"
-                        preload="metadata"
+                        preload="auto"
                         autoPlay
                         muted
                         loop
@@ -93,7 +93,7 @@ export default function Works() {
                     <video
                         src="/portfolio1_optimized.mp4"
                         className="w-[35vw] z-10"
-                        preload="metadata"
+                        preload="auto"
                         autoPlay
                         muted
                         loop
@@ -142,7 +142,7 @@ export default function Works() {
                         <video
                             src="/sms_optimized.mp4"
                             className="w-[35vw] z-10"
-                            preload="metadata"
+                            preload="auto"
                             autoPlay
                             muted
                             loop
@@ -165,7 +165,7 @@ export default function Works() {
                         <video
                             src="/ms_optimized.mp4"
                             className="w-[35vw] z-10"
-                            preload="metadata"
+                            preload="auto"
                             autoPlay
                             muted
                             loop
@@ -188,7 +188,7 @@ export default function Works() {
                         <video
                             src="/portfolio1_optimized.mp4"
                             className="w-[35vw] z-10"
-                            preload="metadata"
+                            preload="auto"
                             autoPlay
                             muted
                             loop
