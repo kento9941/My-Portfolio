@@ -125,6 +125,43 @@ export default function Gallery() {
                     <motion.span variants={item}>g.</motion.span>
                 </motion.h1>
             </div>
+            <div className="cursive w-full h-auto overflow-hidden flex items-center justify-center mt-[clamp(1rem,1vh,2rem)] text-[clamp(0.6rem,0.8vw,1.2rem)] lg:-translate-x-[5vw] md:-translate-y-[25vh] md:text-[clamp(0.8rem,1vw,1.5rem)] md:font-thin">
+                <motion.h1 
+                    className="flex gap-[clamp(0.05rem,0.1vw,0.2rem)] ml-[clamp(3rem,10vw,10rem)]"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                    transition={{ 
+                        staggerChildren: 0.02,
+                        delayChildren: 0.35,
+                    }}
+                >
+                    <motion.span variants={item}>C</motion.span>
+                    <motion.span variants={item}>r</motion.span>
+                    <motion.span variants={item}>e</motion.span>
+                    <motion.span variants={item}>a</motion.span>
+                    <motion.span variants={item}>t</motion.span>
+                    <motion.span variants={item}>e</motion.span>
+                    <motion.span variants={item}>d</motion.span>
+                    <motion.span className="w-[clamp(0.3rem,0.4vw,0.8rem)]" variants={item}> </motion.span>
+                    <motion.span variants={item}>b</motion.span>
+                    <motion.span variants={item}>y</motion.span>
+                    <motion.span className="w-[clamp(0.3rem,0.4vw,0.8rem)]" variants={item}> </motion.span>
+                    <motion.span variants={item}>K</motion.span>
+                    <motion.span variants={item}>e</motion.span>
+                    <motion.span variants={item}>n</motion.span>
+                    <motion.span variants={item}>t</motion.span>
+                    <motion.span variants={item}>o</motion.span>
+                    <motion.span className="w-[clamp(0.3rem,0.4vw,0.8rem)]" variants={item}> </motion.span>
+                    <motion.span variants={item}>K</motion.span>
+                    <motion.span variants={item}>a</motion.span>
+                    <motion.span variants={item}>w</motion.span>
+                    <motion.span variants={item}>a</motion.span>
+                    <motion.span variants={item}>z</motion.span>
+                    <motion.span variants={item}>o</motion.span>
+                    <motion.span variants={item}>e</motion.span>
+                </motion.h1>
+            </div>
         </motion.main>
     )
 }
