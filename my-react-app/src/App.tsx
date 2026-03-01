@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
@@ -23,6 +24,7 @@ export default function App() {
     <div className={`relative w-full min-h-screen select-none transition-colors duration-700 
       ${theme === "dark" ? "text-[#ffffffdc]" : "text-[#101010]"}`}
     >
+      <Analytics />
       {/* mouse effect background */}
       <div className="hidden [@media(pointer:fine)]:block fixed inset-0 -z-50 bg-black w-screen h-screen">
         <MouseEffectScene />
