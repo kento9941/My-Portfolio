@@ -230,24 +230,15 @@ export default function Home() {
 }
 
 function Email() {
-    const [copied, setCopied] = useState(false);
     const set = useCursorStore((state) => state.setCursorType);
-    const { theme } = useThemeStore();
-
-    const copy = async () => {
-        await navigator.clipboard.writeText("kento9941@gmail.com");
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1200);
-    };
-
     return (
-        <button onClick={copy} className="relative cursor-pointer font-light italic" onMouseEnter={() => set("hover")} onMouseLeave={() => set("default")}>
+        <a
+            href="mailto:kento9941@gmail.com"
+            aria-label="Send an email to Kento Kawazoe"
+            onMouseEnter={() => set("hover")}
+            onMouseLeave={() => set("default")}
+        >
             kento9941@gmail.com
-            {copied && (
-                <span className={`absolute bottom-[-1.5rem] right-0 pointer-events-none ${theme === "dark" ? "text-[#ffffffaa]" : "text-[#101010aa]"}`}>
-                    Copied!
-                </span>
-            )}
-        </button>
+        </a>
     )
 }

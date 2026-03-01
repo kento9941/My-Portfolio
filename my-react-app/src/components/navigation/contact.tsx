@@ -7,12 +7,14 @@ export default function Contact() {
                 <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
                 <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
                 <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+                <Email />
             </div>
 
             <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-2 lg:pt-5 lg:text-[clamp(1rem,1.5vw,1.5rem)] lg:font-extralight">
                 <Icon brand="fa-brands fa-linkedin" url="https://www.linkedin.com/in/kento-kawazoe/" />
                 <Icon brand="fa-brands fa-instagram" url="https://www.instagram.com/kent_origami/" />
                 <Icon brand="fa-brands fa-github" url="https://github.com/kento9941" />
+                <Email />
             </div>
         </>
     )
@@ -34,6 +36,20 @@ function Icon({brand, url} : Props) {
             onMouseLeave={() => set("default")}
         >
             <i className={`${brand}`} aria-hidden="true" />
+        </a>
+    )
+}
+
+function Email() {
+    const set = useCursorStore((state) => state.setCursorType);
+    return (
+        <a
+            href="mailto:kento9941@gmail.com"
+            aria-label="Send an email to Kento Kawazoe"
+            onMouseEnter={() => set("hover")}
+            onMouseLeave={() => set("default")}
+        >
+            <i className="fa-regular fa-envelope" aria-hidden="true" />
         </a>
     )
 }
